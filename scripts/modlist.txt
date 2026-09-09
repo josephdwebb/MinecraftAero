@@ -4,6 +4,9 @@
 modrinth create
 modrinth create-aeronautics
 
+# Far-terrain LOD rendering for airship navigation (client + server-side gen)
+modrinth distanthorizons
+
 # Small server-side performance/memory mods (safe on a Raspberry Pi)
 modrinth lithium
 modrinth ferrite-core
