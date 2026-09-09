@@ -23,6 +23,10 @@ SuccessExitStatus=0 143
 WantedBy=multi-user.target
 EOF
 
+# stop any manually-started instance so the service can bind the port
+pkill -f "java @user_jvm_args.txt" 2>/dev/null || true
+sleep 3
+
 sudo systemctl daemon-reload
 sudo systemctl enable --now aero-server
 echo ">> Running. Logs:  journalctl -u aero-server -f"
