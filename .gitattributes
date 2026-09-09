@@ -2,4 +2,5 @@
 *.sh            text eol=lf
 aero.config     text eol=lf
 server/server.properties text eol=lf
+*.toml          text eol=lf
 *.ps1           text eol=crlf
