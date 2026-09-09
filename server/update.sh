@@ -8,7 +8,7 @@ source "$ROOT/aero.config"
 PACK_URL="https://raw.githubusercontent.com/${GITHUB_REPO}/${GITHUB_BRANCH}/pack/pack.toml"
 
 git -C "$ROOT" pull --ff-only
-( cd "$RUN" && ./jdk/bin/java -jar packwiz-installer.jar -g -s server "$PACK_URL" )
+( cd "$RUN" && ./jdk/bin/java -jar packwiz-installer-bootstrap.jar -g -s server "$PACK_URL" )
 
 if systemctl list-units --full -all | grep -q aero-server.service; then
   sudo systemctl restart aero-server

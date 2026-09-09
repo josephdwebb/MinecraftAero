@@ -37,8 +37,8 @@ fi
 
 # --- mods, synced from the pack ---
 echo ">> Syncing mods from pack..."
-curl -fL "https://github.com/packwiz/packwiz-installer/releases/latest/download/packwiz-installer.jar" -o "$RUN/packwiz-installer.jar"
-( cd "$RUN" && "$JAVA" -jar packwiz-installer.jar -g -s server "$PACK_URL" )
+curl -fL "https://github.com/packwiz/packwiz-installer-bootstrap/releases/latest/download/packwiz-installer-bootstrap.jar" -o "$RUN/packwiz-installer-bootstrap.jar"
+( cd "$RUN" && "$JAVA" -jar packwiz-installer-bootstrap.jar -g -s server "$PACK_URL" )
 
 # --- config files ---
 echo "true" > "$RUN/eula.txt"
