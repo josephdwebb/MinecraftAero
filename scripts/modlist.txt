@@ -1,5 +1,7 @@
 # One mod per line: "<source> <slug>". Dependencies are pulled in automatically.
 # Re-run scripts/build-pack after editing. Keep this list short.
+# To REMOVE a mod: delete its line here AND run `pack/../bin/packwiz.exe remove <slug>`
+# (build-pack only adds; it won't prune).
 
 modrinth create
 modrinth create-aeronautics
@@ -19,6 +21,5 @@ modrinth immediatelyfast
 modrinth dynamic-fps
 
 # Client quality-of-life
-modrinth jade
 modrinth xaeros-minimap
 modrinth xaeros-world-map

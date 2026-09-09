@@ -23,8 +23,14 @@ whitelist-only — you'll get "not white-listed" until he adds you).
 - **L** — advancements screen. There's a full Create → Aeronautics guide tree; follow it.
 - **Xaero's minimap** (top-left) — press **U** for the fullscreen map, **B** to drop a
   waypoint. Death markers appear automatically so you can walk back to your stuff.
-- Look at any Create machine to see its speed / stress / contents (Jade, top of screen).
 - Keep-inventory is ON — falling off an airship won't cost you your gear.
+
+## Distant Horizons quirks
+
+- **Nearby water invisible while far water shows?** DH is over-culling. Options → Distant
+  Horizons → Advanced → Graphics → **Overdraw Prevention → 0 / Disabled**. Also try
+  **Transparency → Fast**.
+- **Grainy mid-distance ground?** Same menu → **Noise Texture → Off**.
 
 ## If the game runs badly
 
