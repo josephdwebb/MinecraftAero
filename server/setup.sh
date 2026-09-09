@@ -41,7 +41,7 @@ curl -fL "https://github.com/packwiz/packwiz-installer-bootstrap/releases/latest
 ( cd "$RUN" && "$JAVA" -jar packwiz-installer-bootstrap.jar -g -s server "$PACK_URL" )
 
 # --- config files ---
-echo "true" > "$RUN/eula.txt"
+echo "eula=true" > "$RUN/eula.txt"
 [[ -f "$RUN/server.properties" ]] || cp "$ROOT/server/server.properties" "$RUN/server.properties"
 cat > "$RUN/user_jvm_args.txt" <<EOF
 -Xms${SERVER_XMS}
