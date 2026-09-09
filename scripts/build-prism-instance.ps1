@@ -15,8 +15,8 @@ $nf = (Select-String -Path "$root\pack\pack.toml" -Pattern 'neoforge\s*=\s*"([^"
 if (-not $nf) { throw "Could not read neoforge version from pack\pack.toml" }
 $packUrl = "https://raw.githubusercontent.com/$($cfg['GITHUB_REPO'])/$($cfg['GITHUB_BRANCH'])/pack/pack.toml"
 
-$build = "$root\dist\_prism\Aero Server"
-if (Test-Path "$root\dist\_prism") { Remove-Item "$root\dist\_prism" -Recurse -Force }
+$build = "$root\dist\_prism"
+if (Test-Path $build) { Remove-Item $build -Recurse -Force }
 New-Item -ItemType Directory -Force -Path "$build\.minecraft" | Out-Null
 
 @"
@@ -46,8 +46,13 @@ Invoke-WebRequest -Uri "https://github.com/packwiz/packwiz-installer-bootstrap/r
 
 $zip = "$root\dist\AeroServer-Prism.zip"
 if (Test-Path $zip) { Remove-Item $zip }
-Compress-Archive -Path "$root\dist\_prism\Aero Server" -DestinationPath $zip
-Remove-Item "$root\dist\_prism" -Recurse -Force
+# Use bsdtar (tar.exe, bundled with Windows 10+) — it writes spec-compliant "/" separators,
+# unlike Compress-Archive / .NET Framework ZipFile which write "\".
+Push-Location $build
+& tar.exe -a -c -f $zip -- instance.cfg mmc-pack.json .minecraft
+Pop-Location
+if ($LASTEXITCODE -ne 0) { throw "tar failed to build the zip." }
+Remove-Item $build -Recurse -Force
 
 Write-Host ""
 Write-Host "Built: $zip"
