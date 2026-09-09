@@ -32,6 +32,9 @@ whitelist-only — you'll get "not white-listed" until he adds you).
   (must be Disabled, not Fast). Also set **Overdraw Prevention → 0**.
 - **Grainy mid-distance ground?** Same menu → **Noise Texture → Off**.
 - Fully quit Minecraft after changing these — DH only saves settings on exit.
+- **Stutter every few seconds with DH on?** Prism → Edit instance → Settings → Java →
+  tick "JVM arguments" and add `-XX:+UseZGC -XX:+ZGenerational`. Smooths GC pauses.
+  (The "G1 Garbage collector detected" message in the log is just DH suggesting this.)
 
 ## If the game runs badly
 
