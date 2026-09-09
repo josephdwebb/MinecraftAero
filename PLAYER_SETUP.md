@@ -18,6 +18,25 @@ you automatically — you never download or manage mods yourself.
 Tell Joe your exact Minecraft username so he can whitelist you (the server is
 whitelist-only — you'll get "not white-listed" until he adds you).
 
+## In-game basics
+
+- **L** — advancements screen. There's a full Create → Aeronautics guide tree; follow it.
+- **Xaero's minimap** (top-left) — press **U** for the fullscreen map, **B** to drop a
+  waypoint. Death markers appear automatically so you can walk back to your stuff.
+- Look at any Create machine to see its speed / stress / contents (Jade, top of screen).
+- Keep-inventory is ON — falling off an airship won't cost you your gear.
+
+## If the game runs badly
+
+Your laptop is probably struggling with **Distant Horizons** (the far-terrain view).
+It's optional — the server doesn't need it. Press **Options → Distant Horizons**:
+
+- **LOD Render Distance → 32–48** (down from default)
+- **Quality preset → Minimum**
+- or just **disable Distant Horizons** entirely — everything else still works.
+
+Also in normal Video Settings: Render Distance 6–8, Graphics "Fast".
+
 ## Notes
 
 - Always launch from **Prism** for this server. Your normal launcher still works for

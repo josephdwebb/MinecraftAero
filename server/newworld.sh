@@ -13,7 +13,14 @@ echo ">> New world from seed: ${SEED:-(random)}"
 read -rp ">> This DELETES the current world. Type 'yes' to continue: " ok
 [[ "$ok" == "yes" ]] || { echo "aborted"; exit 1; }
 
+source "$ROOT/aero.config"
+git -C "$ROOT" pull --ff-only || true
+
 sudo systemctl stop aero-server || true
+
+# pick up any new mods from the pack too
+( cd "$RUN" && ./jdk/bin/java -jar packwiz-installer-bootstrap.jar -g -s server \
+    "https://raw.githubusercontent.com/${GITHUB_REPO}/${GITHUB_BRANCH}/pack/pack.toml" )
 
 if [[ -d "$RUN/world" ]]; then
   mkdir -p "$BK"

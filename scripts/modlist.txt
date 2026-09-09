@@ -11,3 +11,14 @@ modrinth distanthorizons
 modrinth lithium
 modrinth ferrite-core
 modrinth modernfix
+
+# Client performance (big wins on weak laptops)
+modrinth sodium
+modrinth entityculling
+modrinth immediatelyfast
+modrinth dynamic-fps
+
+# Client quality-of-life
+modrinth jade
+modrinth xaeros-minimap
+modrinth xaeros-world-map

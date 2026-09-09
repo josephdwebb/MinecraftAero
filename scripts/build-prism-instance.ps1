@@ -59,6 +59,22 @@ if ($cfg["SERVER_ADDRESS"]) {
     [IO.File]::WriteAllBytes("$build\.minecraft\servers.dat", $ms.ToArray())
 }
 
+# Sane one-time video defaults for weak laptops (friends can change these freely later)
+@"
+version:3465
+renderDistance:8
+simulationDistance:8
+maxFps:120
+enableVsync:false
+graphicsMode:0
+renderClouds:"false"
+entityShadows:false
+ao:true
+mipmapLevels:2
+gamma:1.0
+guiScale:0
+"@ | Set-Content -Encoding ascii "$build\.minecraft\options.txt"
+
 Write-Host "Downloading packwiz-installer-bootstrap.jar..."
 Invoke-WebRequest -Uri "https://github.com/packwiz/packwiz-installer-bootstrap/releases/latest/download/packwiz-installer-bootstrap.jar" `
     -OutFile "$build\.minecraft\packwiz-installer-bootstrap.jar"
