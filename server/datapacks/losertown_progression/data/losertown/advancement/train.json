@@ -1,0 +1,33 @@
+{
+  "display": {
+    "icon": {
+      "id": "create:railway_casing"
+    },
+    "title": "All Aboard",
+    "description": "Craft Railway Casing and lay Train Tracks. Build a working train.",
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "have": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "create:railway_casing"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "have"
+    ]
+  ],
+  "parent": "losertown:contraption"
+}

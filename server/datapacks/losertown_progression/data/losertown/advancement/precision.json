@@ -1,0 +1,33 @@
+{
+  "display": {
+    "icon": {
+      "id": "create:precision_mechanism"
+    },
+    "title": "Precision Engineering",
+    "description": "Craft a Precision Mechanism \u2014 the heart of advanced Create devices.",
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "have": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "create:precision_mechanism"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "have"
+    ]
+  ],
+  "parent": "losertown:brass"
+}

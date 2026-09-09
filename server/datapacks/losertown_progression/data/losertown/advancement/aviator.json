@@ -1,0 +1,33 @@
+{
+  "display": {
+    "icon": {
+      "id": "aeronautics:aviators_goggles"
+    },
+    "title": "Aviator",
+    "description": "Craft Aviator's Goggles and take the wheel.",
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "have": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "aeronautics:aviators_goggles"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "have"
+    ]
+  ],
+  "parent": "losertown:envelope"
+}

@@ -1,0 +1,33 @@
+{
+  "display": {
+    "icon": {
+      "id": "create:schematic_table"
+    },
+    "title": "Blueprints",
+    "description": "Craft a Schematic Table. Load a .nbt schematic from your client's 'schematics' folder to deploy a hologram.",
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "have": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "create:schematic_table"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "have"
+    ]
+  ],
+  "parent": "losertown:casing"
+}

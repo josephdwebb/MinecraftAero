@@ -1,0 +1,34 @@
+{
+  "display": {
+    "icon": {
+      "id": "create:millstone"
+    },
+    "title": "Grind It Out",
+    "description": "Craft a Millstone or Crushing Wheels and start processing ore.",
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "have": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "create:millstone",
+              "create:crushing_wheel"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "have"
+    ]
+  ],
+  "parent": "losertown:casing"
+}

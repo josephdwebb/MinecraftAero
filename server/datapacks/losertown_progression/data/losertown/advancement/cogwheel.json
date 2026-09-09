@@ -1,0 +1,34 @@
+{
+  "display": {
+    "icon": {
+      "id": "create:cogwheel"
+    },
+    "title": "Turn, Turn, Turn",
+    "description": "Craft a Cogwheel. Rotation is power in Create.",
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "have": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "create:cogwheel",
+              "create:large_cogwheel"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "have"
+    ]
+  ],
+  "parent": "losertown:root"
+}

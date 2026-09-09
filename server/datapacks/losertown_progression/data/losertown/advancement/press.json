@@ -1,0 +1,33 @@
+{
+  "display": {
+    "icon": {
+      "id": "create:mechanical_press"
+    },
+    "title": "Under Pressure",
+    "description": "Craft a Mechanical Press \u2014 sheet metal, plates and pressing recipes.",
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "have": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "create:mechanical_press"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "have"
+    ]
+  ],
+  "parent": "losertown:casing"
+}

@@ -43,6 +43,12 @@ curl -fL "https://github.com/packwiz/packwiz-installer-bootstrap/releases/latest
 # --- config files ---
 echo "eula=true" > "$RUN/eula.txt"
 [[ -f "$RUN/server.properties" ]] || cp "$ROOT/server/server.properties" "$RUN/server.properties"
+
+# datapacks (guided progression, etc.) into the world dir
+mkdir -p "$RUN/world/datapacks"
+for d in "$ROOT"/server/datapacks/*/; do
+  [[ -d "$d" ]] && cp -r "$d" "$RUN/world/datapacks/"
+done
 cat > "$RUN/user_jvm_args.txt" <<EOF
 -Xms${SERVER_XMS}
 -Xmx${SERVER_XMX}

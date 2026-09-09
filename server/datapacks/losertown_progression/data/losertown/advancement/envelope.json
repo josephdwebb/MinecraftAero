@@ -1,0 +1,40 @@
+{
+  "display": {
+    "icon": {
+      "id": "aeronautics:white_envelope"
+    },
+    "title": "Hot Air",
+    "description": "Craft Envelope blocks \u2014 the skin of a blimp or airship balloon.",
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "have": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "aeronautics:white_envelope",
+              "aeronautics:blue_envelope",
+              "aeronautics:red_envelope",
+              "aeronautics:black_envelope",
+              "aeronautics:gray_envelope",
+              "aeronautics:yellow_envelope",
+              "aeronautics:green_envelope",
+              "aeronautics:orange_envelope"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "have"
+    ]
+  ],
+  "parent": "losertown:propeller"
+}

@@ -1,0 +1,35 @@
+{
+  "display": {
+    "icon": {
+      "id": "aeronautics:levitite_blend"
+    },
+    "title": "Anti-Gravity",
+    "description": "Obtain Levitite Blend or Levitite \u2014 passive lift for heavy airships.",
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "have": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "aeronautics:levitite_blend",
+              "aeronautics:levitite",
+              "aeronautics:pearlescent_levitite"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "have"
+    ]
+  ],
+  "parent": "losertown:prop_bearing"
+}

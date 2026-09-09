@@ -1,0 +1,33 @@
+{
+  "display": {
+    "icon": {
+      "id": "create:andesite_alloy"
+    },
+    "title": "Aesthetic Technology",
+    "description": "Craft Andesite Alloy \u2014 the backbone of every Create machine.",
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false,
+    "background": "minecraft:textures/block/andesite.png"
+  },
+  "criteria": {
+    "have": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "create:andesite_alloy"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "have"
+    ]
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "display": {
+    "icon": {
+      "id": "create:deployer"
+    },
+    "title": "Automation Station",
+    "description": "Craft a Deployer. It uses tools and items on the world for you.",
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "have": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "create:deployer"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "have"
+    ]
+  ],
+  "parent": "losertown:precision"
+}

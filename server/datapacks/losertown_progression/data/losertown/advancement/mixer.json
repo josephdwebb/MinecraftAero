@@ -1,0 +1,33 @@
+{
+  "display": {
+    "icon": {
+      "id": "create:mechanical_mixer"
+    },
+    "title": "Well Mixed",
+    "description": "Craft a Mechanical Mixer for multi-ingredient and washing recipes.",
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "have": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "create:mechanical_mixer"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "have"
+    ]
+  ],
+  "parent": "losertown:press"
+}

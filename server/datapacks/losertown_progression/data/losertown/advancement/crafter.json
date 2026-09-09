@@ -1,0 +1,33 @@
+{
+  "display": {
+    "icon": {
+      "id": "create:mechanical_crafter"
+    },
+    "title": "Assembly Line",
+    "description": "Craft a Mechanical Crafter and automate crafting recipes.",
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "have": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "create:mechanical_crafter"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "have"
+    ]
+  ],
+  "parent": "losertown:precision"
+}

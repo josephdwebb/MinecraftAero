@@ -1,0 +1,33 @@
+{
+  "display": {
+    "icon": {
+      "id": "create:andesite_casing"
+    },
+    "title": "Encased",
+    "description": "Craft Andesite Casing. Most machines need it.",
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "have": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "create:andesite_casing"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "have"
+    ]
+  ],
+  "parent": "losertown:power"
+}

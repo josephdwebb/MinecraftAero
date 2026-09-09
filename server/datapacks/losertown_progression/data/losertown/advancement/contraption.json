@@ -1,0 +1,36 @@
+{
+  "display": {
+    "icon": {
+      "id": "create:mechanical_bearing"
+    },
+    "title": "It Moves!",
+    "description": "Craft a Mechanical Bearing, Clutch or Gantry \u2014 assemble a moving contraption.",
+    "frame": "goal",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "have": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "create:mechanical_bearing",
+              "create:clutch",
+              "create:gantry_carriage",
+              "create:rope_pulley"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "have"
+    ]
+  ],
+  "parent": "losertown:power"
+}

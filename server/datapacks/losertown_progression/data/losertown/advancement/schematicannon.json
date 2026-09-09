@@ -1,0 +1,33 @@
+{
+  "display": {
+    "icon": {
+      "id": "create:schematicannon"
+    },
+    "title": "Automated Architect",
+    "description": "Craft a Schematicannon. Feed it the real materials + gunpowder and it prints your schematic block by block.",
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "have": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "create:schematicannon"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "have"
+    ]
+  ],
+  "parent": "losertown:schematic_table"
+}

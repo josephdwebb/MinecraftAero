@@ -1,0 +1,33 @@
+{
+  "display": {
+    "icon": {
+      "id": "create:brass_ingot"
+    },
+    "title": "Going for Brass",
+    "description": "Produce your first Brass Ingot. Tier two begins.",
+    "frame": "goal",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "have": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "create:brass_ingot"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "have"
+    ]
+  ],
+  "parent": "losertown:mixer"
+}

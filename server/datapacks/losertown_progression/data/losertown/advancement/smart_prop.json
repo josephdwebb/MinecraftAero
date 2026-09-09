@@ -1,0 +1,33 @@
+{
+  "display": {
+    "icon": {
+      "id": "aeronautics:smart_propeller"
+    },
+    "title": "Fly-by-Wire",
+    "description": "Craft a Smart Propeller for controllable, variable-pitch thrust.",
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "have": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "aeronautics:smart_propeller"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "have"
+    ]
+  ],
+  "parent": "losertown:levitite"
+}

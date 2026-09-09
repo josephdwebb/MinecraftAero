@@ -10,6 +10,13 @@ PACK_URL="https://raw.githubusercontent.com/${GITHUB_REPO}/${GITHUB_BRANCH}/pack
 git -C "$ROOT" pull --ff-only
 ( cd "$RUN" && ./jdk/bin/java -jar packwiz-installer-bootstrap.jar -g -s server "$PACK_URL" )
 
+# refresh datapacks in the existing world (no world wipe)
+if [[ -d "$RUN/world" ]]; then
+  for d in "$ROOT"/server/datapacks/*/; do
+    [[ -d "$d" ]] && { rm -rf "$RUN/world/datapacks/$(basename "$d")"; cp -r "$d" "$RUN/world/datapacks/"; }
+  done
+fi
+
 if systemctl list-units --full -all | grep -q aero-server.service; then
   sudo systemctl restart aero-server
   echo ">> aero-server restarted."

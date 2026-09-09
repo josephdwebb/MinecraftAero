@@ -1,0 +1,34 @@
+{
+  "display": {
+    "icon": {
+      "id": "aeronautics:propeller_bearing"
+    },
+    "title": "Spin Up",
+    "description": "Craft a Propeller Bearing. Mount it to make a contraption that flies.",
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "have": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "aeronautics:propeller_bearing",
+              "aeronautics:gyroscopic_propeller_bearing"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "have"
+    ]
+  ],
+  "parent": "losertown:propeller"
+}
