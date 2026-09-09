@@ -27,10 +27,11 @@ whitelist-only — you'll get "not white-listed" until he adds you).
 
 ## Distant Horizons quirks
 
-- **Nearby water invisible while far water shows?** DH is over-culling. Options → Distant
-  Horizons → Advanced → Graphics → **Overdraw Prevention → 0 / Disabled**. Also try
-  **Transparency → Fast**.
+- **Nearby water invisible while far water shows?** DH's LOD transparency breaks Sodium's
+  water. Options → Distant Horizons → Advanced → Graphics → **Transparency → DISABLED**
+  (must be Disabled, not Fast). Also set **Overdraw Prevention → 0**.
 - **Grainy mid-distance ground?** Same menu → **Noise Texture → Off**.
+- Fully quit Minecraft after changing these — DH only saves settings on exit.
 
 ## If the game runs badly
 
