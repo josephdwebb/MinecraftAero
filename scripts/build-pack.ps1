@@ -29,19 +29,25 @@ $pack = "$root\pack"
 New-Item -ItemType Directory -Force -Path $pack | Out-Null
 Set-Location $pack
 if (-not (Test-Path "$pack\pack.toml")) {
-    & $packwiz init --name "Aero Server" --author "$($cfg['GITHUB_REPO'])" `
-        --mc-version $cfg["MC_VERSION"] --modloader neoforge `
-        --neoforge-version $cfg["NEOFORGE_VERSION"] --version 1.0.0 -y
+    $initArgs = @(
+        "init", "--yes", "--name", "Aero Server", "--author", $cfg["GITHUB_REPO"],
+        "--mc-version", $cfg["MC_VERSION"], "--modloader", "neoforge", "--version", "1.0.0"
+    )
+    if ($cfg["NEOFORGE_VERSION"] -eq "latest") { $initArgs += "--neoforge-latest" }
+    else { $initArgs += @("--neoforge-version", $cfg["NEOFORGE_VERSION"]) }
+    & $packwiz @initArgs
+    if (-not (Test-Path "$pack\pack.toml")) { throw "packwiz init failed (see output above)." }
 }
 
 # --- add / update mods ---
 Get-Content "$root\scripts\modlist.txt" | Where-Object { $_ -match "^\s*modrinth\s" } | ForEach-Object {
     $slug = ($_ -split "\s+")[1]
     Write-Host "add/update: $slug"
-    & $packwiz modrinth add $slug -y
+    & $packwiz @("modrinth", "add", $slug, "--yes")
+    if ($LASTEXITCODE -ne 0) { throw "packwiz failed to add '$slug'." }
 }
-& $packwiz update --all -y
-& $packwiz refresh
+& $packwiz @("update", "--all", "--yes")
+& $packwiz @("refresh")
 
 Set-Location $root
 Write-Host ""

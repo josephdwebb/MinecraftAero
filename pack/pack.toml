@@ -1,0 +1,13 @@
+name = "Aero Server"
+author = "josephdwebb/MinecraftAero"
+version = "1.0.0"
+pack-format = "packwiz:1.1.0"
+
+[index]
+file = "index.toml"
+hash-format = "sha256"
+hash = "7a4a4504e0427972e5f9211fcac4cf1faa2933581e7a66a5220572ff87bd9ffd"
+
+[versions]
+minecraft = "1.21.1"
+neoforge = "21.1.250"
