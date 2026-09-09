@@ -3,4 +3,8 @@
 aero.config     text eol=lf
 server/server.properties text eol=lf
 *.toml          text eol=lf
+*.json          text eol=lf
+*.mcfunction    text eol=lf
+*.mcmeta        text eol=lf
+*.py            text eol=lf
 *.ps1           text eol=crlf
