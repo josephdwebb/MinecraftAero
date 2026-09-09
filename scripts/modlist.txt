@@ -6,17 +6,14 @@
 modrinth create
 modrinth create-aeronautics
 
-# Far-terrain LOD rendering for airship navigation (client + server-side gen)
-modrinth distanthorizons
-
-# Small server-side performance/memory mods (safe on a Raspberry Pi)
+# Server-side performance/memory + spawn pre-generation
 modrinth lithium
 modrinth ferrite-core
 modrinth modernfix
+modrinth chunky
 
 # Client performance (big wins on weak laptops)
 modrinth sodium
-modrinth entityculling
 modrinth immediatelyfast
 modrinth dynamic-fps
 

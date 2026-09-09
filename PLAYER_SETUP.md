@@ -25,16 +25,17 @@ whitelist-only — you'll get "not white-listed" until he adds you).
   waypoint. Death markers appear automatically so you can walk back to your stuff.
 - Keep-inventory is ON — falling off an airship won't cost you your gear.
 
-## Distant Horizons quirks
+## Learning Create (do this — it's not obvious otherwise)
 
-- **Nearby water invisible while far water shows?** DH's LOD transparency breaks Sodium's
-  water. Options → Distant Horizons → Advanced → Graphics → **Transparency → DISABLED**
-  (must be Disabled, not Fast). Also set **Overdraw Prevention → 0**.
-- **Grainy mid-distance ground?** Same menu → **Noise Texture → Off**.
-- Fully quit Minecraft after changing these — DH only saves settings on exit.
-- **Stutter every few seconds with DH on?** Prism → Edit instance → Settings → Java →
-  tick "JVM arguments" and add `-XX:+UseZGC -XX:+ZGenerational`. Smooths GC pauses.
-  (The "G1 Garbage collector detected" message in the log is just DH suggesting this.)
+- **Ponder**: open your inventory, hover any Create item, press **W**. It plays an
+  animated tutorial for that exact block. This is the fastest way to learn.
+- **Craft Engineer's Goggles early** (glass + gold nuggets). Wear them and look at any
+  rotating block to see its **speed (RPM)** and **stress**. If a machine isn't working,
+  goggles tell you why — usually "not enough stress capacity" (add more wheels/motors)
+  or "overstressed" (too many machines on one power source).
+- Follow the **Advancements screen (L)** — it's an ordered Create → Aeronautics path.
+- First hour: Andesite Alloy → hand crank or water wheel → Cogwheels → Millstone (ore
+  doubling) → Mechanical Press → Andesite Casing. Then you can build almost anything.
 
 ## If the game runs badly
 

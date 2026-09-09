@@ -62,7 +62,7 @@ if ($cfg["SERVER_ADDRESS"]) {
 # Sane one-time video defaults for weak laptops (friends can change these freely later)
 @"
 version:3465
-renderDistance:8
+renderDistance:12
 simulationDistance:8
 maxFps:120
 enableVsync:false
