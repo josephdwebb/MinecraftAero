@@ -1,0 +1,10 @@
+# One mod per line: "<source> <slug>". Dependencies are pulled in automatically.
+# Re-run scripts/build-pack after editing. Keep this list short.
+
+modrinth create
+modrinth create-aeronautics
+
+# Small server-side performance/memory mods (safe on a Raspberry Pi)
+modrinth lithium
+modrinth ferrite-core
+modrinth modernfix

@@ -1,0 +1,9 @@
+# Tooling downloaded by scripts
+bin/
+*.jar
+
+# Build output
+dist/
+
+# Local server runtime (if you ever run the server from this folder)
+server/run/
