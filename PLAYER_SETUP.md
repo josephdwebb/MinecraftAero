@@ -13,9 +13,10 @@ you automatically — you never download or manage mods yourself.
 3. **First launch** — select the "Aero Server" instance and click **Play**. The first
    launch downloads Minecraft, NeoForge, and the mods (a minute or two). Later launches
    are fast, and mods re-sync automatically whenever the server's list changes.
-4. **Connect** — Multiplayer → the server is pre-added, or add `PI_ADDRESS:25565`.
+4. **Connect** — Multiplayer → **Losertown** is already in the list. Join it.
 
-Tell Joe your exact Minecraft username so he can whitelist you.
+Tell Joe your exact Minecraft username so he can whitelist you (the server is
+whitelist-only — you'll get "not white-listed" until he adds you).
 
 ## Notes
 

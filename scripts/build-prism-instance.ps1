@@ -29,9 +29,10 @@ New-Item -ItemType Directory -Force -Path "$build\.minecraft" | Out-Null
 }
 "@ | Set-Content -Encoding utf8 "$build\mmc-pack.json"
 
+$instName = if ($cfg["SERVER_NAME"]) { $cfg["SERVER_NAME"] } else { "Aero Server" }
 @"
 InstanceType=OneSix
-name=Aero Server
+name=$instName
 iconKey=default
 OverrideCommands=true
 PreLaunchCommand="`$INST_JAVA" -jar "`$INST_MC_DIR/packwiz-installer-bootstrap.jar" "$packUrl"
@@ -39,6 +40,24 @@ OverrideMemory=true
 MinMemAlloc=2048
 MaxMemAlloc=4096
 "@ | Set-Content -Encoding utf8 "$build\instance.cfg"
+
+# Pre-add the server to this instance's Multiplayer list (uncompressed NBT servers.dat)
+if ($cfg["SERVER_ADDRESS"]) {
+    $ms = New-Object System.IO.MemoryStream
+    function W([byte[]]$b) { $ms.Write($b, 0, $b.Length) }
+    function WShort([int]$v) { W @([byte](($v -shr 8) -band 0xFF), [byte]($v -band 0xFF)) }
+    function WInt([int]$v) { W @([byte](($v -shr 24) -band 0xFF), [byte](($v -shr 16) -band 0xFF), [byte](($v -shr 8) -band 0xFF), [byte]($v -band 0xFF)) }
+    function WStr([string]$s) { $b = [Text.Encoding]::UTF8.GetBytes($s); WShort $b.Length; W $b }
+    function WNamedStr([string]$n, [string]$v) { W @([byte]8); WStr $n; WStr $v }
+    W @([byte]10); WShort 0                    # root TAG_Compound, name ""
+      W @([byte]9); WStr "servers"             # TAG_List "servers"
+      W @([byte]10); WInt 1                    #   of 1 TAG_Compound
+        WNamedStr "name" $instName
+        WNamedStr "ip" $cfg["SERVER_ADDRESS"]
+        W @([byte]0)                           #   end element
+    W @([byte]0)                               # end root
+    [IO.File]::WriteAllBytes("$build\.minecraft\servers.dat", $ms.ToArray())
+}
 
 Write-Host "Downloading packwiz-installer-bootstrap.jar..."
 Invoke-WebRequest -Uri "https://github.com/packwiz/packwiz-installer-bootstrap/releases/latest/download/packwiz-installer-bootstrap.jar" `
@@ -50,7 +69,9 @@ if (Test-Path $zip) { Remove-Item $zip }
 # unlike Compress-Archive / .NET Framework ZipFile which write "\".
 Push-Location $build
 & tar.exe -a -c -f $zip -- instance.cfg mmc-pack.json .minecraft
+$tarExit = $LASTEXITCODE
 Pop-Location
+$LASTEXITCODE = $tarExit
 if ($LASTEXITCODE -ne 0) { throw "tar failed to build the zip." }
 Remove-Item $build -Recurse -Force
 

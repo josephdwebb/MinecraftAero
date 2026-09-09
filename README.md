@@ -43,7 +43,25 @@ bash server/setup.sh
 bash server/install-service.sh
 ```
 
-Open port **25565/tcp** (game) on your router → Pi. Keep **25575** (RCON) LAN-only.
+### Making it reachable over the internet
+
+The Prism instance connects to `SERVER_ADDRESS` from `aero.config`. That hostname must
+resolve to your home's public IP. Pick one:
+
+**A. DuckDNS + port forward (recommended, lowest latency)**
+1. Sign in at https://www.duckdns.org with a Google/GitHub account, create a subdomain
+   (e.g. `joe-losertown`). Put `joe-losertown.duckdns.org` in `aero.config` → `SERVER_ADDRESS`.
+2. On the Pi, add a cron job to keep the record pointed at your IP:
+   ```
+   ( crontab -l 2>/dev/null; echo '*/5 * * * * curl -sk "https://www.duckdns.org/update?domains=joe-losertown&token=YOUR_DUCKDNS_TOKEN&ip=" >/dev/null' ) | crontab -
+   ```
+3. Forward **TCP 25565** on your router to the Pi's LAN IP. Keep **25575** (RCON) LAN-only.
+
+**B. playit.gg (no router config; adds a small latency hop)**
+Install the playit agent on the Pi, create a Minecraft tunnel, use the address it gives
+you as `SERVER_ADDRESS`. No port forwarding needed.
+
+After changing `SERVER_ADDRESS`, re-run `build-prism-instance.ps1` and re-share the zip.
 Whitelist friends: `journalctl` won't take input — use RCON, or temporarily run
 `bash server/start.sh` in a terminal and type `whitelist add <name>`.
 
