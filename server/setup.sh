@@ -49,18 +49,15 @@ mkdir -p "$RUN/world/datapacks"
 for d in "$ROOT"/server/datapacks/*/; do
   [[ -d "$d" ]] && cp -r "$d" "$RUN/world/datapacks/"
 done
+# Generational ZGC: near-zero GC pauses, which Distant Horizons needs
+# (DH warns against G1 — its large LOD buffers + explicit GC cause stutter under G1).
 cat > "$RUN/user_jvm_args.txt" <<EOF
 -Xms${SERVER_XMS}
 -Xmx${SERVER_XMX}
--XX:+UseG1GC
--XX:+ParallelRefProcEnabled
--XX:MaxGCPauseMillis=200
--XX:+UnlockExperimentalVMOptions
--XX:G1NewSizePercent=30
--XX:G1MaxNewSizePercent=40
--XX:G1HeapRegionSize=8M
--XX:G1ReservePercent=20
--XX:InitiatingHeapOccupancyPercent=15
+-XX:+UseZGC
+-XX:+ZGenerational
+-XX:+PerfDisableSharedMem
+-XX:-OmitStackTraceInFastThrow
 EOF
 
 echo ""
