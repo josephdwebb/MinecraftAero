@@ -29,9 +29,8 @@ modrinth companions-mod
 # Immersion
 modrinth ambientsounds       client
 
-# Economy / shop (server systems)
+# Economy currency (shop itself = locked villager traders in the hub, no extra mod)
 modrinth simple-economies
-modrinth sdm-shop
 
 # Guided quest system (Create + Aeronautics + Companions onboarding)
 curseforge ftb-quests-forge

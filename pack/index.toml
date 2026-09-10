@@ -96,11 +96,6 @@ hash = "a1fa121ed5d0207e4cdd3f545d043f68f9a4bb38dcb21278b968fad5e4cefe4a"
 metafile = true
 
 [[files]]
-file = "mods/sdm-shop.pw.toml"
-hash = "ae31f8e8109d4fe92cd11efc49bddd5f018cca458f649fd999d216563253b424"
-metafile = true
-
-[[files]]
 file = "mods/simple-economies.pw.toml"
 hash = "7b2c751f988218bffad3edb4ba86bf9299fc61bb2a034e2181d7eafa0d43feb4"
 metafile = true
