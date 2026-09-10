@@ -1,5 +1,5 @@
-# One mod per line: "<source> <slug>". Dependencies are pulled in automatically.
-# Re-run scripts/build-pack after editing. Keep this list short.
+# One mod per line: "<source> <slug> [side]".  side = both (default) | client | server
+# Dependencies are pulled in automatically. Re-run scripts/build-pack after editing.
 # To REMOVE a mod: delete its line here AND run `pack/../bin/packwiz.exe remove <slug>`
 # (build-pack only adds; it won't prune).
 
@@ -10,16 +10,16 @@ modrinth create-aeronautics
 modrinth lithium
 modrinth ferrite-core
 modrinth modernfix
-modrinth chunky
+modrinth chunky            server
 
 # Client performance (big wins on weak laptops)
-modrinth sodium
-modrinth immediatelyfast
-modrinth dynamic-fps
+modrinth sodium            client
+modrinth immediatelyfast   client
+modrinth dynamic-fps       client
 
 # Client quality-of-life
-modrinth xaeros-minimap
-modrinth xaeros-world-map
+modrinth xaeros-minimap    client
+modrinth xaeros-world-map  client
 
 # Companions / pets
 modrinth doggy-talents-next
