@@ -20,3 +20,7 @@ modrinth dynamic-fps
 # Client quality-of-life
 modrinth xaeros-minimap
 modrinth xaeros-world-map
+
+# Companions / pets
+modrinth doggy-talents-next
+modrinth companions-mod
