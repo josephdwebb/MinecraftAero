@@ -53,7 +53,8 @@ Get-Content "$root\scripts\modlist.txt" | Where-Object { $_ -match "^\s*modrinth
 foreach ($slug in $sides.Keys) {
     $f = "$pack\mods\$slug.pw.toml"
     if (Test-Path $f) {
-        (Get-Content $f) -replace '^side\s*=\s*".*"$', "side = `"$($sides[$slug])`"" | Set-Content $f
+        $txt = ((Get-Content $f) -replace '^side\s*=\s*".*"$', "side = `"$($sides[$slug])`"") -join "`n"
+        [System.IO.File]::WriteAllText($f, $txt + "`n")   # LF only (packwiz + .gitattributes)
         Write-Host "  side: $slug -> $($sides[$slug])"
     }
 }

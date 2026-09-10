@@ -2,7 +2,7 @@ hash-format = "sha256"
 
 [[files]]
 file = "mods/chunky.pw.toml"
-hash = "dbf1b55fa703024af47aafaa0fab0af1c972e7faea68e6f46f4467f20f0c837b"
+hash = "68cc51e721e993a8b7a2cbaf45369933b22b07a9c82327ab14757ee10684aa81"
 metafile = true
 
 [[files]]
@@ -27,7 +27,7 @@ metafile = true
 
 [[files]]
 file = "mods/dynamic-fps.pw.toml"
-hash = "5d441990462eb4fca864636bb4a422439d8328b29a0c752bf54f62782498d689"
+hash = "ae6fd52d8bdcbeca5bbe6db840f22f92c1928fe0fda22017b19612b9b00a245a"
 metafile = true
 
 [[files]]
@@ -42,12 +42,12 @@ metafile = true
 
 [[files]]
 file = "mods/immediatelyfast.pw.toml"
-hash = "b83c36e0c9c73475ee42b6d75c41c3aae33ad3c8323089ac1d147ca091499f48"
+hash = "48b746cb623c16a8cee88ec0d7d42233d74d97b9cf92d662f121633723d50876"
 metafile = true
 
 [[files]]
 file = "mods/knight-lib.pw.toml"
-hash = "608ca3128f7ce83bc199a1687c0843c23999de0a29d6669be374e4588f5fde69"
+hash = "29aa0788a41adc7cb517a6908c73c2d62179e61ed6194ebb755aaed8628452db"
 metafile = true
 
 [[files]]
@@ -67,15 +67,15 @@ metafile = true
 
 [[files]]
 file = "mods/sodium.pw.toml"
-hash = "1ad76a785a33d3a5238739e681e5ad6547fd854d8d3649214ca7fc24ed5e0fb0"
+hash = "2a001cdb3d5ac4970d422914083c27380eba8ebd40dfd435754fe6566ba78beb"
 metafile = true
 
 [[files]]
 file = "mods/xaeros-minimap.pw.toml"
-hash = "d2705bc03449bbb06d298efeb2747958ee64ed1439789bc0b94c37e1a2c3b655"
+hash = "8ed3e895470dd147a57481100de34488b57a12d777a3ac0441e5d8d902d4b50c"
 metafile = true
 
 [[files]]
 file = "mods/xaeros-world-map.pw.toml"
-hash = "afdf7ef08a40ba68787d128f1861b46cbb00cb3806c00b7e161f28576817e048"
+hash = "f139ff8d596a050f140c50a54866bbbd454833e4014227986a716c39a7dbe535"
 metafile = true
