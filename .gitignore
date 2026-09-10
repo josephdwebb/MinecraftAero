@@ -7,3 +7,6 @@ dist/
 
 # Local server runtime (if you ever run the server from this folder)
 server/run/
+
+# local-only: the downloaded world save (only server/hub/HubBlaze.schem is tracked)
+village-map-schematic/

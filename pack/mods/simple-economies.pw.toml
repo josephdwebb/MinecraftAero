@@ -1,0 +1,13 @@
+name = "Simple Economy"
+filename = "simpleeconomy-1.0.0.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/WdLFhJjo/versions/fuJQaY5w/simpleeconomy-1.0.0.jar"
+hash-format = "sha512"
+hash = "832ea421f47466023fb75f20b0b96ba8cd9dac01f87fcc8bc0b298ebe78493dbd9f79dc2a74b539dff969116ee5fc240e11a7b81831fafeb1c836d6bcd61f5e0"
+
+[update]
+[update.modrinth]
+mod-id = "WdLFhJjo"
+version = "fuJQaY5w"

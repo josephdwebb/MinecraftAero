@@ -1,0 +1,13 @@
+name = "SDM Shop (Legacy)"
+filename = "sdmshopa-neoforge-3.2.0.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/dOrw4veV/versions/HyVWYXLr/sdmshopa-neoforge-3.2.0.jar"
+hash-format = "sha512"
+hash = "41b78a2c0ba58288e43580bc05d2eabc14ed6ed80f1066ac93de568406ba659e9d01ea3c506bb92297a994277e5aab6e58e54ff368696c96ad781e1c5ab0344b"
+
+[update]
+[update.modrinth]
+mod-id = "dOrw4veV"
+version = "HyVWYXLr"

@@ -41,21 +41,25 @@ if (-not (Test-Path "$pack\pack.toml")) {
 
 # --- add / update mods ---
 $sides = @{}
-Get-Content "$root\scripts\modlist.txt" | Where-Object { $_ -match "^\s*modrinth\s" } | ForEach-Object {
+Get-Content "$root\scripts\modlist.txt" | Where-Object { $_ -match "^\s*(modrinth|curseforge)\s" } | ForEach-Object {
     $parts = ($_ -split "\s+" | Where-Object { $_ })
-    $slug = $parts[1]
+    $src = $parts[0]; $slug = $parts[1]
     if ($parts.Count -ge 3 -and $parts[2] -match '^(client|server|both)$') { $sides[$slug] = $parts[2] }
-    Write-Host "add/update: $slug"
-    & $packwiz @("modrinth", "add", $slug, "--yes")
+    Write-Host "add/update: $src $slug"
+    & $packwiz @($src, "add", $slug, "--yes")
     if ($LASTEXITCODE -ne 0) { throw "packwiz failed to add '$slug'." }
 }
-# packwiz resets `side` to "both" on every re-add — re-apply our overrides
+# packwiz resets `side` to "both" on every re-add — re-apply our overrides.
+# CurseForge deps land as their own .pw.toml; match by a normalized name too.
 foreach ($slug in $sides.Keys) {
-    $f = "$pack\mods\$slug.pw.toml"
-    if (Test-Path $f) {
-        $txt = ((Get-Content $f) -replace '^side\s*=\s*".*"$', "side = `"$($sides[$slug])`"") -join "`n"
-        [System.IO.File]::WriteAllText($f, $txt + "`n")   # LF only (packwiz + .gitattributes)
-        Write-Host "  side: $slug -> $($sides[$slug])"
+    $candidates = @("$pack\mods\$slug.pw.toml") + (Get-ChildItem "$pack\mods\*.pw.toml" |
+        Where-Object { $_.BaseName -replace '[-_]','' -eq ($slug -replace '[-_]','') } | ForEach-Object FullName)
+    foreach ($f in ($candidates | Select-Object -Unique)) {
+        if (Test-Path $f) {
+            $txt = ((Get-Content $f) -replace '^side\s*=\s*".*"$', "side = `"$($sides[$slug])`"") -join "`n"
+            [System.IO.File]::WriteAllText($f, $txt + "`n")   # LF only (packwiz + .gitattributes)
+            Write-Host "  side: $(Split-Path $f -Leaf) -> $($sides[$slug])"
+        }
     }
 }
 & $packwiz @("update", "--all", "--yes")

@@ -1,4 +1,5 @@
-# One mod per line: "<source> <slug> [side]".  side = both (default) | client | server
+# One mod per line: "<source> <slug> [side]".  source = modrinth | curseforge
+# side = both (default) | client | server
 # Dependencies are pulled in automatically. Re-run scripts/build-pack after editing.
 # To REMOVE a mod: delete its line here AND run `pack/../bin/packwiz.exe remove <slug>`
 # (build-pack only adds; it won't prune).
@@ -24,3 +25,16 @@ modrinth xaeros-world-map  client
 # Companions / pets
 modrinth doggy-talents-next
 modrinth companions-mod
+
+# Immersion
+modrinth ambientsounds       client
+
+# Economy / shop (server systems)
+modrinth simple-economies
+modrinth sdm-shop
+
+# Guided quest system (Create + Aeronautics + Companions onboarding)
+curseforge ftb-quests-forge
+
+# Admin-only world editing tool (server-side, op-gated) — used to place the hub
+modrinth worldedit           server
