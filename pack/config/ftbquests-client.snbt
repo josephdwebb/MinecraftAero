@@ -53,7 +53,7 @@
 		
 		# Default: "all"
 		# Valid values: "all", "quests_only", "hidden"
-		pinned_visibility: "all"
+		pinned_visibility: "hidden"
 	}
 	ui: {
 		# Default: true
