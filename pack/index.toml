@@ -2,7 +2,7 @@ hash-format = "sha256"
 
 [[files]]
 file = "config/ftbquests-client.snbt"
-hash = "0939b53134bb285e9a8e684e21b024622f34f7e116c9e28b72665b0fb0b06ade"
+hash = "7c8ab009a14d96256f067f9f44aa6cec56478c35f9375705fb163927d87504e9"
 
 [[files]]
 file = "mods/ambientsounds.pw.toml"

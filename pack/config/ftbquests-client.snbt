@@ -33,7 +33,7 @@
 		auto_pin_follows: "file"
 		
 		# Default: true
-		pinned_exclude_flexible: false
+		pinned_exclude_flexible: true
 		
 		# Default: 2
 		# Range: -∞ ~ +∞
