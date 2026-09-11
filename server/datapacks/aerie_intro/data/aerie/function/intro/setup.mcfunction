@@ -19,4 +19,4 @@ scoreboard players set #bz aerie_cam -3800
 
 # Release anyone caught mid-scene by a reload, and clear orphaned cameras
 execute as @a[scores={aerie_intro=1}] at @s run function aerie:intro/finish
-kill @e[type=minecraft:text_display,tag=aerie_cam_e]
+kill @e[type=minecraft:item_display,tag=aerie_cam_e]

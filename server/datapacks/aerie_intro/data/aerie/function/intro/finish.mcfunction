@@ -4,7 +4,7 @@ scoreboard players set @s aerie_intro 3
 scoreboard players set @s aerie_t 0
 scoreboard players reset @s aerie_skip
 spectate
-kill @e[type=minecraft:text_display,tag=aerie_cam_e]
+kill @e[type=minecraft:item_display,tag=aerie_cam_e]
 title @s clear
 title @s times 10 60 20
 gamemode survival @s

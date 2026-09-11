@@ -18,9 +18,9 @@ title @s times 40 120 30
 # view to a camera entity. Spectating an entity ignores mouse input entirely,
 # so the player cannot fight the camera.
 execute in minecraft:overworld run tp @s -70.0 170.0 17.0 -164 42
-kill @e[type=minecraft:text_display,tag=aerie_cam_e]
-execute in minecraft:overworld run summon minecraft:text_display -70.0 170.0 17.0 {Tags:["aerie_cam_e"],teleport_duration:3,Rotation:[-164f,42f],billboard:"fixed",text:'{"text":""}'}
-spectate @e[type=minecraft:text_display,tag=aerie_cam_e,limit=1] @s
+kill @e[type=minecraft:item_display,tag=aerie_cam_e]
+execute in minecraft:overworld run summon minecraft:item_display -70.0 170.0 17.0 {Tags:["aerie_cam_e"],teleport_duration:3,Rotation:[-164f,42f]}
+spectate @e[type=minecraft:item_display,tag=aerie_cam_e,limit=1] @s
 
 effect give @s minecraft:blindness 2 0 true
 stopsound @s
