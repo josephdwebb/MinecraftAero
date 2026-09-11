@@ -17,6 +17,14 @@ if [[ -d "$RUN/world" ]]; then
   done
 fi
 
+# deploy FTB Quests definitions (server-authoritative; clients sync over network)
+if [[ -d "$ROOT/server/ftbquests/quests" ]]; then
+  mkdir -p "$RUN/config/ftbquests"
+  rm -rf "$RUN/config/ftbquests/quests"
+  cp -r "$ROOT/server/ftbquests/quests" "$RUN/config/ftbquests/quests"
+  echo ">> FTB Quests definitions deployed"
+fi
+
 if systemctl list-units --full -all | grep -q aero-server.service; then
   sudo systemctl restart aero-server
   echo ">> aero-server restarted."

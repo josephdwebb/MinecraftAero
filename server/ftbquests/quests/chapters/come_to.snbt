@@ -1,0 +1,1414 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: "circle"
+	filename: "come_to"
+	group: "0AE71E00A11ED000"
+	icon: {
+		id: "minecraft:oak_sapling"
+	}
+	id: "16CF9AAA6599081B"
+	order_index: 0
+	quest_links: [ ]
+	quests: [
+		{
+			id: "C832B7DF500952BC"
+			description: [
+				"The world swims into focus. Cold ground. A splitting headache. The smell of pine and smoke."
+				""
+				"You don't know your name. You don't know this place. You don't know how you got here — only that you fell, and the sky was on fire."
+				""
+				"&7First things first. Get off the ground and &fpunch a tree&7."
+			]
+			icon: {
+				id: "minecraft:oak_log"
+			}
+			shape: "hexagon"
+			size: 1.5d
+			tasks: [
+				{
+					id: "C7DD406854BC28E1"
+					item: {
+						count: 1
+						id: "#minecraft:logs"
+					}
+					type: "item"
+				}
+			]
+			rewards: [
+				{
+					id: "AE528C5DADC40DFB"
+					count: 3
+					item: {
+						count: 1
+						id: "minecraft:oak_log"
+					}
+					type: "item"
+				}
+				{
+					id: "905CFC59EB2FD31B"
+					type: "xp"
+					xp: 5
+				}
+			]
+			title: "Come To"
+			x: 0.0d
+			y: 0.0d
+		}
+		{
+			id: "31B653C69B64086A"
+			dependencies: [
+				"C832B7DF500952BC"
+			]
+			description: [
+				"Break the logs down into planks. It's the start of everything."
+			]
+			icon: {
+				id: "minecraft:oak_planks"
+			}
+			tasks: [
+				{
+					id: "4C0AFF5202355DD0"
+					item: {
+						count: 1
+						id: "#minecraft:planks"
+					}
+					type: "item"
+					count: 4L
+				}
+			]
+			rewards: [
+				{
+					id: "ECFB87749AF9BD3F"
+					type: "xp"
+					xp: 3
+				}
+			]
+			title: "Splinters"
+			x: 1.75d
+			y: 0.0d
+		}
+		{
+			id: "2BD46C240B1CF81D"
+			dependencies: [
+				"31B653C69B64086A"
+			]
+			description: [
+				"Four planks in a square. A crafting table lets you make everything else."
+			]
+			icon: {
+				id: "minecraft:crafting_table"
+			}
+			tasks: [
+				{
+					id: "6CB0C34AF1B70F59"
+					item: {
+						count: 1
+						id: "minecraft:crafting_table"
+					}
+					type: "item"
+				}
+			]
+			rewards: [
+				{
+					id: "60420DBEAA347D15"
+					count: 4
+					item: {
+						count: 1
+						id: "minecraft:oak_planks"
+					}
+					type: "item"
+				}
+				{
+					id: "87A4B1D06FFBFC3B"
+					type: "xp"
+					xp: 5
+				}
+			]
+			title: "A Place to Work"
+			x: 3.5d
+			y: 0.0d
+		}
+		{
+			id: "9A384F9BF5F4D234"
+			dependencies: [
+				"2BD46C240B1CF81D"
+			]
+			description: [
+				"Two planks stacked. You'll need a pile of these for tools and torches."
+			]
+			icon: {
+				id: "minecraft:stick"
+			}
+			tasks: [
+				{
+					id: "5755ABA7F67AAF01"
+					item: {
+						count: 1
+						id: "minecraft:stick"
+					}
+					type: "item"
+					count: 8L
+				}
+			]
+			rewards: [
+				{
+					id: "559AC27DB36B4FF1"
+					type: "xp"
+					xp: 3
+				}
+			]
+			title: "Sticks"
+			x: 5.25d
+			y: 0.0d
+		}
+		{
+			id: "E4BC988BAD6A9957"
+			dependencies: [
+				"9A384F9BF5F4D234"
+			]
+			description: [
+				"Three planks, two sticks. It won't last, but it'll get you stone."
+			]
+			icon: {
+				id: "minecraft:wooden_pickaxe"
+			}
+			tasks: [
+				{
+					id: "3E94E14A78B6463D"
+					item: {
+						count: 1
+						id: "minecraft:wooden_pickaxe"
+					}
+					type: "item"
+				}
+			]
+			rewards: [
+				{
+					id: "44A45430D7193AC2"
+					type: "xp"
+					xp: 5
+				}
+			]
+			title: "Wooden Pickaxe"
+			x: 7.0d
+			y: 0.0d
+		}
+		{
+			id: "43EF441AED629293"
+			dependencies: [
+				"9A384F9BF5F4D234"
+			]
+			description: [
+				"Chops wood faster than your fists. Your knuckles will thank you."
+			]
+			icon: {
+				id: "minecraft:wooden_axe"
+			}
+			tasks: [
+				{
+					id: "C18B8D5151BB7A98"
+					item: {
+						count: 1
+						id: "minecraft:wooden_axe"
+					}
+					type: "item"
+				}
+			]
+			rewards: [
+				{
+					id: "9545457F153510F6"
+					type: "xp"
+					xp: 5
+				}
+			]
+			title: "Wooden Axe"
+			x: 8.75d
+			y: 0.0d
+		}
+		{
+			id: "24E6F92EC4765AA4"
+			dependencies: [
+				"9A384F9BF5F4D234"
+			]
+			description: [
+				"Something moved in the trees. Arm yourself."
+			]
+			icon: {
+				id: "minecraft:wooden_sword"
+			}
+			tasks: [
+				{
+					id: "EB62CA7DB164C8D6"
+					item: {
+						count: 1
+						id: "minecraft:wooden_sword"
+					}
+					type: "item"
+				}
+			]
+			rewards: [
+				{
+					id: "1F62DD15A583103A"
+					type: "xp"
+					xp: 5
+				}
+			]
+			title: "Wooden Sword"
+			x: 10.5d
+			y: 0.0d
+		}
+		{
+			id: "CAD8B98ECAA45A5D"
+			dependencies: [
+				"E4BC988BAD6A9957"
+			]
+			description: [
+				"Take the wooden pickaxe underground, or into the mountain. Bring back a stack of cobblestone."
+			]
+			icon: {
+				id: "minecraft:cobblestone"
+			}
+			tasks: [
+				{
+					id: "08608C09007898C3"
+					item: {
+						count: 1
+						id: "minecraft:cobblestone"
+					}
+					type: "item"
+					count: 20L
+				}
+			]
+			rewards: [
+				{
+					id: "4A0A073D63FD0273"
+					count: 1
+					item: {
+						count: 1
+						id: "minecraft:bread"
+					}
+					type: "item"
+				}
+				{
+					id: "A57BC9BC01D056BB"
+					type: "xp"
+					xp: 10
+				}
+			]
+			title: "Break Stone"
+			x: 10.5d
+			y: 1.75d
+		}
+		{
+			id: "A1102DAD27E27158"
+			dependencies: [
+				"CAD8B98ECAA45A5D"
+			]
+			description: [
+				"Cobblestone tools are the real starting kit. Make the set."
+			]
+			icon: {
+				id: "minecraft:stone_pickaxe"
+			}
+			shape: "square"
+			tasks: [
+				{
+					id: "8350F8D383DD313B"
+					item: {
+						count: 1
+						id: "minecraft:stone_pickaxe"
+					}
+					type: "item"
+				}
+				{
+					id: "D103DAC96F79A41B"
+					item: {
+						count: 1
+						id: "minecraft:stone_axe"
+					}
+					type: "item"
+				}
+				{
+					id: "4E3445E9D15596AA"
+					item: {
+						count: 1
+						id: "minecraft:stone_sword"
+					}
+					type: "item"
+				}
+				{
+					id: "4B4AD1BA770623D4"
+					item: {
+						count: 1
+						id: "minecraft:stone_shovel"
+					}
+					type: "item"
+				}
+			]
+			rewards: [
+				{
+					id: "D2A599A2CD688DBB"
+					count: 4
+					item: {
+						count: 1
+						id: "minecraft:coal"
+					}
+					type: "item"
+				}
+				{
+					id: "CE70F5C0AFF4EFCA"
+					type: "xp"
+					xp: 15
+				}
+			]
+			title: "Stone Age"
+			x: 8.75d
+			y: 1.75d
+		}
+		{
+			id: "D56229968D5E620B"
+			dependencies: [
+				"A1102DAD27E27158"
+			]
+			description: [
+				"Eight cobblestone. A furnace smelts ore, cooks food, and bakes charcoal."
+			]
+			icon: {
+				id: "minecraft:furnace"
+			}
+			tasks: [
+				{
+					id: "71078418A322B288"
+					item: {
+						count: 1
+						id: "minecraft:furnace"
+					}
+					type: "item"
+				}
+			]
+			rewards: [
+				{
+					id: "783340ECFBDE464B"
+					type: "xp"
+					xp: 5
+				}
+			]
+			title: "The Hearth"
+			x: 7.0d
+			y: 1.75d
+		}
+		{
+			id: "9049EB5E011201C0"
+			dependencies: [
+				"D56229968D5E620B"
+			]
+			description: [
+				"Mine coal (black flecks in stone) &7or&f smelt a log into charcoal. Either makes torches."
+				""
+				"Torch + stick. Never sleep in the dark again."
+			]
+			icon: {
+				id: "minecraft:torch"
+			}
+			shape: "square"
+			tasks: [
+				{
+					id: "02EA3B8F2930C813"
+					item: {
+						count: 1
+						id: "minecraft:torch"
+					}
+					type: "item"
+					count: 8L
+				}
+			]
+			rewards: [
+				{
+					id: "3560F2E8D2F2921D"
+					count: 24
+					item: {
+						count: 1
+						id: "minecraft:torch"
+					}
+					type: "item"
+				}
+				{
+					id: "474B7FFB194C8FDE"
+					type: "xp"
+					xp: 10
+				}
+			]
+			title: "First Light"
+			x: 5.25d
+			y: 1.75d
+		}
+		{
+			id: "D87B3B854D108D5B"
+			dependencies: [
+				"9049EB5E011201C0"
+			]
+			description: [
+				"Six planks. A door keeps the night where it belongs."
+			]
+			icon: {
+				id: "minecraft:oak_door"
+			}
+			tasks: [
+				{
+					id: "D43E22B381F58230"
+					item: {
+						count: 1
+						id: "#minecraft:wooden_doors"
+					}
+					type: "item"
+				}
+			]
+			rewards: [
+				{
+					id: "56BB5CCF33EE69D2"
+					type: "xp"
+					xp: 5
+				}
+			]
+			title: "Seal It Off"
+			x: 3.5d
+			y: 1.75d
+		}
+		{
+			id: "FAA0795721B9683C"
+			dependencies: [
+				"D87B3B854D108D5B"
+			]
+			description: [
+				"It came with the dark. Put it down — kill two of whatever's clawing at your walls."
+			]
+			icon: {
+				id: "minecraft:rotten_flesh"
+			}
+			shape: "square"
+			tasks: [
+				{
+					id: "273ECDB56F55E980"
+					entity: "minecraft:zombie"
+					type: "kill"
+					value: 2L
+				}
+			]
+			rewards: [
+				{
+					id: "176AC21A5BE7D086"
+					count: 8
+					item: {
+						count: 1
+						id: "minecraft:arrow"
+					}
+					type: "item"
+				}
+				{
+					id: "3F1538663E248D9B"
+					type: "xp"
+					xp: 15
+				}
+			]
+			title: "Something Out There"
+			x: 1.75d
+			y: 1.75d
+		}
+		{
+			id: "E512DD6D39C13534"
+			dependencies: [
+				"D87B3B854D108D5B"
+			]
+			description: [
+				"Find sheep. Shear them or cut them down — you need wool for a bed."
+			]
+			icon: {
+				id: "minecraft:white_wool"
+			}
+			tasks: [
+				{
+					id: "32AA17D0DD099F24"
+					item: {
+						count: 1
+						id: "#minecraft:wool"
+					}
+					type: "item"
+					count: 3L
+				}
+			]
+			rewards: [
+				{
+					id: "24E658B42B27BDDD"
+					type: "xp"
+					xp: 5
+				}
+			]
+			title: "Fleece"
+			x: 0.0d
+			y: 1.75d
+		}
+		{
+			id: "E7664D5DA4D0CB9A"
+			dependencies: [
+				"E512DD6D39C13534"
+			]
+			description: [
+				"Three wool, three planks. It's not much. It's yours."
+			]
+			icon: {
+				id: "minecraft:red_bed"
+			}
+			tasks: [
+				{
+					id: "77C49E7BAC63B69D"
+					item: {
+						count: 1
+						id: "#minecraft:beds"
+					}
+					type: "item"
+				}
+			]
+			rewards: [
+				{
+					id: "5C1C1668D551F0B3"
+					type: "xp"
+					xp: 10
+				}
+			]
+			title: "Somewhere to Fall"
+			x: 0.0d
+			y: 3.5d
+		}
+		{
+			id: "2FD6D8A0CB56E4FC"
+			dependencies: [
+				"E7664D5DA4D0CB9A"
+			]
+			description: [
+				"Place the bed. Right-click it after dark to sleep."
+				""
+				"&7When you wake, this is home — the world will bring you back here."
+			]
+			icon: {
+				id: "minecraft:white_bed"
+			}
+			shape: "square"
+			tasks: [
+				{
+					id: "0A3498BAE9818378"
+					type: "checkmark"
+					title: "I slept in my bed and set my spawn"
+				}
+			]
+			rewards: [
+				{
+					id: "954C7416319E14BE"
+					count: 3
+					item: {
+						count: 1
+						id: "minecraft:cooked_beef"
+					}
+					type: "item"
+				}
+				{
+					id: "8DDE9F0C1ABA3D5A"
+					type: "xp"
+					xp: 15
+				}
+			]
+			title: "Rest"
+			x: 1.75d
+			y: 3.5d
+		}
+		{
+			id: "F2E6E167B15F2D7E"
+			dependencies: [
+				"2FD6D8A0CB56E4FC"
+			]
+			description: [
+				"Eight planks. Stop carrying your whole life in your pockets."
+			]
+			icon: {
+				id: "minecraft:chest"
+			}
+			tasks: [
+				{
+					id: "8FC18ACEE62D83D7"
+					item: {
+						count: 1
+						id: "minecraft:chest"
+					}
+					type: "item"
+				}
+			]
+			rewards: [
+				{
+					id: "8B319FFF1992FFE2"
+					count: 1
+					item: {
+						count: 1
+						id: "minecraft:chest"
+					}
+					type: "item"
+				}
+			]
+			title: "Somewhere to Keep It"
+			x: 3.5d
+			y: 3.5d
+		}
+		{
+			id: "AB5D36F83A346A11"
+			dependencies: [
+				"F2E6E167B15F2D7E"
+			]
+			description: [
+				"Iron hides as pale specks in stone, lower down. A stone pickaxe will break it."
+				"Bring back raw iron — half a dozen."
+			]
+			icon: {
+				id: "minecraft:raw_iron"
+			}
+			shape: "square"
+			tasks: [
+				{
+					id: "8423F540640BE247"
+					item: {
+						count: 1
+						id: "minecraft:raw_iron"
+					}
+					type: "item"
+					count: 6L
+				}
+			]
+			rewards: [
+				{
+					id: "083F13C3BBD08989"
+					count: 16
+					item: {
+						count: 1
+						id: "minecraft:torch"
+					}
+					type: "item"
+				}
+				{
+					id: "F6EE01F163E76963"
+					type: "xp"
+					xp: 15
+				}
+			]
+			title: "Dig Deeper"
+			x: 5.25d
+			y: 3.5d
+		}
+		{
+			id: "54812E037F16C06B"
+			dependencies: [
+				"AB5D36F83A346A11"
+			]
+			description: [
+				"Raw iron + fuel in the furnace. Out comes something you can actually use."
+			]
+			icon: {
+				id: "minecraft:iron_ingot"
+			}
+			tasks: [
+				{
+					id: "0B35741459F4E1F8"
+					item: {
+						count: 1
+						id: "minecraft:iron_ingot"
+					}
+					type: "item"
+					count: 5L
+				}
+			]
+			rewards: [
+				{
+					id: "99DC04401AB45DDB"
+					count: 2
+					item: {
+						count: 1
+						id: "minecraft:iron_ingot"
+					}
+					type: "item"
+				}
+				{
+					id: "78BDB33F9B1FAB11"
+					type: "xp"
+					xp: 10
+				}
+			]
+			title: "Smelt It Down"
+			x: 7.0d
+			y: 3.5d
+		}
+		{
+			id: "F8A704B3F2C4D08F"
+			dependencies: [
+				"54812E037F16C06B"
+			]
+			description: [
+				"The tool that opens up the deep world. Diamond, redstone, gold — all behind this."
+			]
+			icon: {
+				id: "minecraft:iron_pickaxe"
+			}
+			tasks: [
+				{
+					id: "F6F81EFB494C3417"
+					item: {
+						count: 1
+						id: "minecraft:iron_pickaxe"
+					}
+					type: "item"
+				}
+			]
+			rewards: [
+				{
+					id: "B27920E3FC5BC478"
+					type: "xp"
+					xp: 10
+				}
+			]
+			title: "Iron Pickaxe"
+			x: 8.75d
+			y: 3.5d
+		}
+		{
+			id: "1DCDE1BB92924746"
+			dependencies: [
+				"F8A704B3F2C4D08F"
+			]
+			description: [
+				"Round out the set."
+			]
+			icon: {
+				id: "minecraft:iron_axe"
+			}
+			shape: "square"
+			tasks: [
+				{
+					id: "3D6068E588E12B5D"
+					item: {
+						count: 1
+						id: "minecraft:iron_axe"
+					}
+					type: "item"
+				}
+				{
+					id: "4E634156D0B645C1"
+					item: {
+						count: 1
+						id: "minecraft:iron_sword"
+					}
+					type: "item"
+				}
+				{
+					id: "83E4C9F24E82CA23"
+					item: {
+						count: 1
+						id: "minecraft:iron_shovel"
+					}
+					type: "item"
+				}
+			]
+			rewards: [
+				{
+					id: "2296F35B012840F8"
+					count: 8
+					item: {
+						count: 1
+						id: "minecraft:coal"
+					}
+					type: "item"
+				}
+				{
+					id: "EE0A8D3E3742A22D"
+					type: "xp"
+					xp: 15
+				}
+			]
+			title: "Iron Age"
+			x: 10.5d
+			y: 3.5d
+		}
+		{
+			id: "D81D64C6E762931B"
+			dependencies: [
+				"1DCDE1BB92924746"
+			]
+			description: [
+				"Full iron. The night gets a lot less frightening."
+			]
+			icon: {
+				id: "minecraft:iron_chestplate"
+			}
+			shape: "square"
+			tasks: [
+				{
+					id: "80E6BDAF3D57A116"
+					item: {
+						count: 1
+						id: "minecraft:iron_helmet"
+					}
+					type: "item"
+				}
+				{
+					id: "5102C40D69EB2293"
+					item: {
+						count: 1
+						id: "minecraft:iron_chestplate"
+					}
+					type: "item"
+				}
+				{
+					id: "999D49B827DC64ED"
+					item: {
+						count: 1
+						id: "minecraft:iron_leggings"
+					}
+					type: "item"
+				}
+				{
+					id: "9E5F7AC8D94297AD"
+					item: {
+						count: 1
+						id: "minecraft:iron_boots"
+					}
+					type: "item"
+				}
+			]
+			rewards: [
+				{
+					id: "F033E2259CF0CE80"
+					type: "xp"
+					xp: 30
+				}
+			]
+			title: "Ironclad"
+			x: 10.5d
+			y: 5.25d
+		}
+		{
+			id: "E0DB36F6EEC29F3E"
+			dependencies: [
+				"F8A704B3F2C4D08F"
+			]
+			description: [
+				"Six planks, one iron. Raise it and most things bounce off."
+			]
+			icon: {
+				id: "minecraft:shield"
+			}
+			tasks: [
+				{
+					id: "98FA94858AE148BA"
+					item: {
+						count: 1
+						id: "minecraft:shield"
+					}
+					type: "item"
+				}
+			]
+			rewards: [
+				{
+					id: "64C9A34B02536C91"
+					type: "xp"
+					xp: 10
+				}
+			]
+			title: "Guard"
+			x: 8.75d
+			y: 5.25d
+		}
+		{
+			id: "A53A3470638FB55F"
+			dependencies: [
+				"F8A704B3F2C4D08F"
+			]
+			description: [
+				"Three iron. Carries water, lava, milk, fish. You'll want water soon — trust me."
+			]
+			icon: {
+				id: "minecraft:bucket"
+			}
+			tasks: [
+				{
+					id: "BD498D4AA5BB53AA"
+					item: {
+						count: 1
+						id: "minecraft:bucket"
+					}
+					type: "item"
+				}
+			]
+			rewards: [
+				{
+					id: "1AF1EDDFFDC46A68"
+					count: 1
+					item: {
+						count: 1
+						id: "minecraft:water_bucket"
+					}
+					type: "item"
+				}
+			]
+			title: "The Bucket"
+			x: 7.0d
+			y: 5.25d
+		}
+		{
+			id: "EE1AFDEA69A26B1B"
+			dependencies: [
+				"F8A704B3F2C4D08F"
+			]
+			description: [
+				"Two iron. Wool without the wet work, plus leaves and string."
+			]
+			icon: {
+				id: "minecraft:shears"
+			}
+			tasks: [
+				{
+					id: "2DEB48CE2F11C952"
+					item: {
+						count: 1
+						id: "minecraft:shears"
+					}
+					type: "item"
+				}
+			]
+			rewards: [
+				{
+					id: "E7F7AD383D003B24"
+					count: 6
+					item: {
+						count: 1
+						id: "minecraft:white_wool"
+					}
+					type: "item"
+				}
+			]
+			title: "Shears"
+			x: 5.25d
+			y: 5.25d
+		}
+		{
+			id: "2392FC4E3814ECF2"
+			dependencies: [
+				"EE1AFDEA69A26B1B"
+			]
+			description: [
+				"A hoe turns dirt into farmland. Any hoe will do."
+			]
+			icon: {
+				id: "minecraft:iron_hoe"
+			}
+			tasks: [
+				{
+					id: "A273BA63F6B01102"
+					item: {
+						count: 1
+						id: "minecraft:stone_hoe"
+					}
+					type: "item"
+				}
+			]
+			rewards: [
+				{
+					id: "B6510BA7E942FD64"
+					type: "xp"
+					xp: 5
+				}
+			]
+			title: "Break Ground"
+			x: 3.5d
+			y: 5.25d
+		}
+		{
+			id: "DB66FCD3E05E3677"
+			dependencies: [
+				"2392FC4E3814ECF2"
+			]
+			description: [
+				"Punch tall grass until seeds drop. Plant them on tilled soil next to water."
+			]
+			icon: {
+				id: "minecraft:wheat_seeds"
+			}
+			tasks: [
+				{
+					id: "14A0F5855E62A37A"
+					item: {
+						count: 1
+						id: "minecraft:wheat_seeds"
+					}
+					type: "item"
+					count: 3L
+				}
+			]
+			rewards: [
+				{
+					id: "5BF19DC7CA8113BE"
+					type: "xp"
+					xp: 3
+				}
+			]
+			title: "Seed"
+			x: 1.75d
+			y: 5.25d
+		}
+		{
+			id: "FA11008CCC82FA36"
+			dependencies: [
+				"DB66FCD3E05E3677"
+			]
+			description: [
+				"Till soil, plant your seeds, wait for the stalks to go gold."
+				"Then harvest — bring back wheat."
+			]
+			icon: {
+				id: "minecraft:wheat"
+			}
+			shape: "square"
+			tasks: [
+				{
+					id: "4C9E77B9B128B2BD"
+					type: "checkmark"
+					title: "I tilled soil and planted a crop"
+				}
+				{
+					id: "691659B28DA2677E"
+					item: {
+						count: 1
+						id: "minecraft:wheat"
+					}
+					type: "item"
+					count: 3L
+				}
+			]
+			rewards: [
+				{
+					id: "0B92EF278BA28B33"
+					count: 6
+					item: {
+						count: 1
+						id: "minecraft:wheat_seeds"
+					}
+					type: "item"
+				}
+				{
+					id: "A722ED7867B8D8DB"
+					type: "xp"
+					xp: 15
+				}
+			]
+			title: "The Field"
+			x: 0.0d
+			y: 5.25d
+		}
+		{
+			id: "8E57ECA4D3179316"
+			dependencies: [
+				"FA11008CCC82FA36"
+			]
+			description: [
+				"Three wheat in a row. You will not go hungry in the Outlands again."
+			]
+			icon: {
+				id: "minecraft:bread"
+			}
+			shape: "square"
+			tasks: [
+				{
+					id: "2D78D53323A9F54F"
+					item: {
+						count: 1
+						id: "minecraft:bread"
+					}
+					type: "item"
+				}
+			]
+			rewards: [
+				{
+					id: "FD36DE3FAC135F1B"
+					count: 8
+					item: {
+						count: 1
+						id: "minecraft:bread"
+					}
+					type: "item"
+				}
+				{
+					id: "106DCB406EC3C498"
+					type: "xp"
+					xp: 15
+				}
+			]
+			title: "Bread"
+			x: 0.0d
+			y: 7.0d
+		}
+		{
+			id: "9ED177CAF5B33BD1"
+			dependencies: [
+				"8E57ECA4D3179316"
+			]
+			description: [
+				"Feed two of the same animal (wheat, seeds, carrots — depends on the animal). They'll make a third."
+				"A herd is a food supply that walks itself home."
+			]
+			icon: {
+				id: "minecraft:wheat"
+			}
+			tasks: [
+				{
+					id: "4AEC4113807A5170"
+					type: "advancement"
+					advancement: "minecraft:husbandry/breed_an_animal"
+					criterion: ""
+				}
+			]
+			rewards: [
+				{
+					id: "C26A377ED0AB57E4"
+					count: 2
+					item: {
+						count: 1
+						id: "minecraft:hay_block"
+					}
+					type: "item"
+				}
+				{
+					id: "140540205A965064"
+					type: "xp"
+					xp: 15
+				}
+			]
+			title: "Livestock"
+			x: 1.75d
+			y: 7.0d
+		}
+		{
+			id: "F58435779520CC3C"
+			dependencies: [
+				"8E57ECA4D3179316"
+			]
+			description: [
+				"Cook and stockpile real food. Rotten flesh doesn't count."
+			]
+			icon: {
+				id: "minecraft:cooked_beef"
+			}
+			tasks: [
+				{
+					id: "EB8D72E7FD2FE3AC"
+					item: {
+						count: 1
+						id: "minecraft:cooked_beef"
+					}
+					type: "item"
+					count: 5L
+				}
+			]
+			rewards: [
+				{
+					id: "1696AC6930585F92"
+					type: "xp"
+					xp: 10
+				}
+			]
+			title: "A Proper Meal"
+			x: 3.5d
+			y: 7.0d
+		}
+		{
+			id: "E5C85FD2AF1BE518"
+			dependencies: [
+				"FA11008CCC82FA36"
+			]
+			description: [
+				"Take what you need, leave the forest standing. Grow a tree."
+			]
+			icon: {
+				id: "minecraft:oak_sapling"
+			}
+			tasks: [
+				{
+					id: "14B0C353A007FA9D"
+					item: {
+						count: 1
+						id: "#minecraft:saplings"
+					}
+					type: "item"
+					count: 2L
+				}
+			]
+			rewards: [
+				{
+					id: "8D490D47ED6A6B04"
+					type: "xp"
+					xp: 5
+				}
+			]
+			title: "Replant"
+			x: 5.25d
+			y: 7.0d
+		}
+		{
+			id: "A3D540A2F7810957"
+			dependencies: [
+				"F58435779520CC3C"
+				"8E57ECA4D3179316"
+			]
+			description: [
+				"You don't leave a safe camp without supplies. Stock up."
+			]
+			icon: {
+				id: "minecraft:bundle"
+			}
+			shape: "square"
+			tasks: [
+				{
+					id: "EE1B7B7D494D8CFB"
+					item: {
+						count: 1
+						id: "minecraft:torch"
+					}
+					type: "item"
+					count: 16L
+				}
+				{
+					id: "9BCF8CD59FBA626D"
+					item: {
+						count: 1
+						id: "minecraft:bread"
+					}
+					type: "item"
+					count: 8L
+				}
+				{
+					id: "28E7B32FA72C0260"
+					item: {
+						count: 1
+						id: "minecraft:iron_ingot"
+					}
+					type: "item"
+					count: 8L
+				}
+			]
+			rewards: [
+				{
+					id: "B368CA3D02B0C8B7"
+					count: 1
+					item: {
+						count: 1
+						id: "minecraft:iron_block"
+					}
+					type: "item"
+				}
+				{
+					id: "07A5B5F77BEF44AD"
+					type: "xp"
+					xp: 20
+				}
+			]
+			title: "Provisions"
+			x: 7.0d
+			y: 7.0d
+		}
+		{
+			id: "96339D80CCC42F60"
+			dependencies: [
+				"A3D540A2F7810957"
+			]
+			description: [
+				"Climb something high. Look out over the frontier. Get a feel for where you woke up."
+				"&7(Walk about a thousand blocks — anywhere.)"
+			]
+			icon: {
+				id: "minecraft:spyglass"
+			}
+			tasks: [
+				{
+					id: "9972BEDC416531BA"
+					type: "checkmark"
+					title: "I've walked the land and seen the Outlands"
+				}
+			]
+			rewards: [
+				{
+					id: "C676DC0FE8ED7458"
+					count: 1
+					item: {
+						count: 1
+						id: "minecraft:map"
+					}
+					type: "item"
+				}
+				{
+					id: "A4E500F5EC8AC267"
+					type: "xp"
+					xp: 15
+				}
+			]
+			title: "See the Outlands"
+			x: 8.75d
+			y: 7.0d
+		}
+		{
+			id: "5CB7F6551BD6013F"
+			dependencies: [
+				"96339D80CCC42F60"
+				"E5C85FD2AF1BE518"
+				"9ED177CAF5B33BD1"
+			]
+			description: [
+				"You've survived. Iron on your back, bread in your pack, a roof and a bed."
+				""
+				"But you've seen the machines in the ruins — the wheels, the gears, the great brass spines half-buried in the hills. Nobody grew those. Somebody &obuilt&r them, on purpose, and then they left."
+				""
+				"&fTime to learn how.&7 The next chapter opens the moment you're ready."
+			]
+			icon: {
+				id: "create:brass_ingot"
+			}
+			shape: "gear"
+			size: 2.0d
+			tasks: [
+				{
+					id: "A10AB4D529D43286"
+					type: "checkmark"
+					title: "I'm ready to look at the machines"
+				}
+			]
+			rewards: [
+				{
+					id: "E02E20AC649C6A52"
+					count: 4
+					item: {
+						count: 1
+						id: "create:andesite_alloy"
+					}
+					type: "item"
+				}
+				{
+					id: "522A94B1230DB893"
+					type: "command"
+					command: "title @p title {\"text\":\"You remember something...\",\"color\":\"gold\"}"
+					title: "A flicker of memory"
+					player_command: false
+				}
+				{
+					id: "D0B4C215A3B2C165"
+					type: "xp"
+					xp: 50
+				}
+			]
+			title: "What the Old World Left"
+			x: 10.5d
+			y: 7.0d
+		}
+	]
+	title: "I · Come To"
+}
