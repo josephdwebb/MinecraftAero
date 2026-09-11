@@ -1,57 +1,57 @@
-# Joining the Aero Server (one-time setup, ~3 minutes)
+# Joining Outlands of Aerie
 
-You'll use **Prism Launcher** instead of the normal Minecraft launcher for this server.
-It logs in with your same Microsoft/Mojang account and keeps the mods up to date for
-you automatically — you never download or manage mods yourself.
+A Create + Create: Aeronautics survival server. Setup takes about 3 minutes and
+you only do it once. You'll use **Prism Launcher** instead of the normal
+Minecraft launcher — same Microsoft account, and it keeps the mods up to date
+for you automatically. You never download or manage mods yourself.
 
-## Steps
+**Server address:** `joe-losertown.duckdns.org`
 
-1. **Install Prism Launcher** — https://prismlauncher.org (Windows/Mac/Linux). Open it
-   and add your Microsoft account when prompted.
-2. **Import the pack** — download `AeroServer-Prism.zip` (from our Discord), then in
-   Prism: **Add Instance → Import from zip →** pick that file → **OK**.
-3. **First launch** — select the "Aero Server" instance and click **Play**. The first
-   launch downloads Minecraft, NeoForge, and the mods (a minute or two). Later launches
-   are fast, and mods re-sync automatically whenever the server's list changes.
-4. **Connect** — Multiplayer → **Losertown** is already in the list. Join it.
+---
 
-Tell Joe your exact Minecraft username so he can whitelist you (the server is
-whitelist-only — you'll get "not white-listed" until he adds you).
+## Setup
 
-## In-game basics
+**1. Install Prism Launcher** — https://prismlauncher.org
+   Open it and add your Microsoft account when prompted.
 
-- **L** — advancements screen. There's a full Create → Aeronautics guide tree; follow it.
-- **Xaero's minimap** (top-left) — press **U** for the fullscreen map, **B** to drop a
-  waypoint. Death markers appear automatically so you can walk back to your stuff.
-- Keep-inventory is ON — falling off an airship won't cost you your gear.
+**2. Import the pack**
+   Download `AeroServer-Prism.zip`, then in Prism:
+   **Add Instance → Import from zip →** pick that file → **OK**
 
-## Learning Create (do this — it's not obvious otherwise)
+**3. Launch it**
+   Select the **Outlands of Aerie** instance and click **Play**.
+   The first launch downloads Minecraft, NeoForge and the mods — a couple of
+   minutes. Later launches are fast, and mods re-sync automatically whenever
+   the server's list changes.
 
-- **Ponder**: open your inventory, hover any Create item, press **W**. It plays an
-  animated tutorial for that exact block. This is the fastest way to learn.
-- **Craft Engineer's Goggles early** (glass + gold nuggets). Wear them and look at any
-  rotating block to see its **speed (RPM)** and **stress**. If a machine isn't working,
-  goggles tell you why — usually "not enough stress capacity" (add more wheels/motors)
-  or "overstressed" (too many machines on one power source).
-- Follow the **Advancements screen (L)** — it's an ordered Create → Aeronautics path.
-- First hour: Andesite Alloy → hand crank or water wheel → Cogwheels → Millstone (ore
-  doubling) → Mechanical Press → Andesite Casing. Then you can build almost anything.
+**4. Join**
+   **Multiplayer → Outlands of Aerie** is already in your server list. Join it.
 
-## If the game runs badly
+**5. Get whitelisted**
+   Tell Joe your exact Minecraft username. The server is whitelist-only, so
+   you'll see "You are not white-listed on this server!" until he adds you.
 
-Your laptop is probably struggling with **Distant Horizons** (the far-terrain view).
-It's optional — the server doesn't need it. Press **Options → Distant Horizons**:
-
-- **LOD Render Distance → 32–48** (down from default)
-- **Quality preset → Minimum**
-- or just **disable Distant Horizons** entirely — everything else still works.
-
-Also in normal Video Settings: Render Distance 6–8, Graphics "Fast".
+---
 
 ## Notes
 
-- Always launch from **Prism** for this server. Your normal launcher still works for
-  everything else.
-- If a launch ever fails right after an update, click Play again — the sync finishes
-  and the second launch works.
-- Requires Java? No — Prism handles it.
+- **Always launch from Prism** for this server. Your normal Minecraft launcher
+  still works for everything else — they don't interfere.
+- Accept the resource pack prompt when you join.
+- If a launch fails right after an update, just click Play again — the mod sync
+  finishes and the second attempt works.
+- Need Java? No. Prism handles it.
+
+## Learning Create
+
+- **Ponder**: open your inventory, hover any Create item, press **W**. It plays
+  an animated tutorial for that exact block. Easily the fastest way to learn.
+- **Craft Engineer's Goggles early** (glass + gold nuggets). Wear them and look
+  at a machine to see its speed and stress. When something won't run, the
+  goggles tell you why — usually "overstressed" (add another power source) or
+  no rotational force reaching it.
+
+## Performance
+
+Running badly? In Video Settings: Render Distance 6–8, Graphics "Fast".
+The pack already ships with Sodium and sane defaults.
