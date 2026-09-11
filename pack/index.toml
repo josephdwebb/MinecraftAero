@@ -16,11 +16,6 @@ hash = "68cc51e721e993a8b7a2cbaf45369933b22b07a9c82327ab14757ee10684aa81"
 metafile = true
 
 [[files]]
-file = "mods/companions-mod.pw.toml"
-hash = "00190c07e7435da401eb16dc7eaafd24c758cce650ee0b13e10c97c8a74cbe9a"
-metafile = true
-
-[[files]]
 file = "mods/create-aeronautics.pw.toml"
 hash = "3b8895369640b2a52d3e05f7186185ba6798e44d513f11c5427a0fe9c16769e9"
 metafile = true
@@ -33,6 +28,11 @@ metafile = true
 [[files]]
 file = "mods/creativecore.pw.toml"
 hash = "ee67d289146b7330d5977e524dec564ae6cb55585a6d5ecd7f472220044a9880"
+metafile = true
+
+[[files]]
+file = "mods/critters-and-companions.pw.toml"
+hash = "b065a8cb99a887abb2c434b84e3fa84f1e62cf500b1b9f50c86a4b48e4bdcc4f"
 metafile = true
 
 [[files]]
@@ -118,4 +118,9 @@ metafile = true
 [[files]]
 file = "mods/xaeros-world-map.pw.toml"
 hash = "f139ff8d596a050f140c50a54866bbbd454833e4014227986a716c39a7dbe535"
+metafile = true
+
+[[files]]
+file = "mods/yacl.pw.toml"
+hash = "539f362e9e192cf3b2813e0dfdfc51a5e6814129c6e82a9733842529beea6242"
 metafile = true

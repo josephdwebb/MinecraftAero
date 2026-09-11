@@ -10,3 +10,9 @@ server/run/
 
 # local-only: the downloaded world save (only server/hub/HubBlaze.schem is tracked)
 village-map-schematic/
+
+# raw asset sources (converted copies live in resourcepack/)
+*.webp
+*.mp3
+blackstone_airship_final_4.nbt
+resourcepack/_src/

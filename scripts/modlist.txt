@@ -24,7 +24,7 @@ modrinth xaeros-world-map  client
 
 # Companions / pets
 modrinth doggy-talents-next
-modrinth companions-mod
+modrinth critters-and-companions
 
 # Immersion
 modrinth ambientsounds       client
