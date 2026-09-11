@@ -1,6 +1,10 @@
 hash-format = "sha256"
 
 [[files]]
+file = "config/ftbquests-client.snbt"
+hash = "07f78a44d2a148eb61e78da53e7d97570aa6cf8dcfa0026b9b9896ef107fc0fd"
+
+[[files]]
 file = "mods/ambientsounds.pw.toml"
 hash = "f3d66527c4f82b44d9409f643332bc15f91b85f033afe147e3d8b421c0ea6d1e"
 metafile = true

@@ -4,10 +4,12 @@ Output: ./quests/  (chapter_groups.snbt, data.snbt, chapters/*.snbt)
 Deploy: copy ./quests/ -> server/run/config/ftbquests/quests/  then restart.
 IDs are deterministic (hash of a stable key) so regenerating keeps dependencies intact.
 """
-import hashlib, os, pathlib, textwrap
+import hashlib, json, pathlib
 
 ROOT = pathlib.Path(__file__).parent
 OUT = ROOT / "quests"
+ADV = ROOT.parent / "datapacks/aerie_intro/data/aerie/advancement/quests"
+TAG_TASKS = {}
 GROUP_ID = "0AE71E00A11ED000"          # "Outlands of Aerie" group
 
 def hid(key: str) -> str:
@@ -57,7 +59,18 @@ def _rid(qkey, n):
     return hid(f"{qkey}/reward/{n}")
 
 def t_item(qkey, n, item, count=1):
-    d = {"id": _tid(qkey, n), "item": {"count": 1, "id": item}, "type": "item"}
+    # A tag is not a valid ItemStack id. Vanilla advancement predicates support
+    # tags without requiring another client/server filtering mod.
+    if item.startswith("#"):
+        key = f"{qkey}/{n}"
+        TAG_TASKS[key] = {"criteria": {"have": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {"items": [{"items": item, "count": {"min": count}}]}
+        }}}
+        task = t_adv(qkey, n, "aerie:quests/" + key)
+        task["title"] = f"Collect {count} {item.split(':')[1].replace('_', ' ')} (any type)"
+        return task
+    d = {"id": _tid(qkey, n), "item": {"count": 1, "id": item}, "type": "item", "consume_items": False}
     if count != 1:
         d["count"] = L(count)
     return d
@@ -81,7 +94,7 @@ def r_xp(qkey, n, xp):
     return {"id": _rid(qkey, n), "type": "xp", "xp": xp}
 
 def r_cmd(qkey, n, cmd, title):
-    return {"id": _rid(qkey, n), "type": "command", "command": cmd, "title": title, "player_command": False}
+    return {"id": _rid(qkey, n), "type": "command", "command": cmd, "title": title, "permission_level": 2, "silent": True}
 
 # ---------- Chapter 1 spec ----------
 # each quest: key, title, [desc lines], icon, [tasks], [rewards], [dep keys], shape/size opt
@@ -132,12 +145,9 @@ quest("cobble", "Break Stone", ["Take the wooden pickaxe underground, or into th
       deps=["wpick"])
 
 quest("stonetools", "Stone Age",
-      ["Cobblestone tools are the real starting kit. Make the set."],
+      ["Make a stone pickaxe to open the mining route. The rest of the set is your choice."],
       "minecraft:stone_pickaxe",
-      [t_item(V+"/stonetools", 0, "minecraft:stone_pickaxe", 1),
-       t_item(V+"/stonetools", 1, "minecraft:stone_axe", 1),
-       t_item(V+"/stonetools", 2, "minecraft:stone_sword", 1),
-       t_item(V+"/stonetools", 3, "minecraft:stone_shovel", 1)],
+      [t_item(V+"/stonetools", 0, "minecraft:stone_pickaxe", 1)],
       [r_item(V+"/stonetools", 0, "minecraft:coal", 4), r_xp(V+"/stonetools", 1, 15)],
       deps=["cobble"], shape="square")
 
@@ -147,7 +157,7 @@ quest("furnace", "The Hearth", ["Eight cobblestone. A furnace smelts ore, cooks 
 
 quest("light", "First Light",
       ["Mine coal (black flecks in stone) &7or&f smelt a log into charcoal. Either makes torches.",
-       "", "Torch + stick. Never sleep in the dark again."],
+       "", "Coal or charcoal above a stick makes four torches. Light the ground around camp."],
       "minecraft:torch", [t_item(V+"/light", 0, "minecraft:torch", 8)],
       [r_item(V+"/light", 0, "minecraft:torch", 24), r_xp(V+"/light", 1, 10)],
       deps=["furnace"], shape="square")
@@ -176,7 +186,7 @@ quest("sleep", "Rest",
       ["Place the bed. Right-click it after dark to sleep.",
        "", "&7When you wake, this is home — the world will bring you back here."],
       "minecraft:white_bed",
-      [t_check(V+"/sleep", 0, "I slept in my bed and set my spawn")],
+      [t_adv(V+"/sleep", 0, "minecraft:adventure/sleep_in_bed")],
       [r_item(V+"/sleep", 0, "minecraft:cooked_beef", 3), r_xp(V+"/sleep", 1, 15)],
       deps=["bed"], shape="square")
 
@@ -232,7 +242,7 @@ quest("shears", "Shears", ["Two iron. Wool without the wet work, plus leaves and
 # --- Act IV: farming ---
 quest("hoe", "Break Ground", ["A hoe turns dirt into farmland. Any hoe will do."],
       "minecraft:iron_hoe",
-      [t_item(V+"/hoe", 0, "minecraft:stone_hoe", 1)],
+      [t_item(V+"/hoe", 0, "#minecraft:hoes", 1)],
       [r_xp(V+"/hoe", 0, 5)], deps=["shears"])
 
 quest("seeds", "Seed", ["Punch tall grass until seeds drop. Plant them on tilled soil next to water."],
@@ -295,11 +305,41 @@ quest("ruins", "What the Old World Left",
       "create:brass_ingot",
       [t_check(V+"/ruins", 0, "I'm ready to look at the machines")],
       [r_item(V+"/ruins", 0, "create:andesite_alloy", 4),
-       r_cmd(V+"/ruins", 1, "title @p title {\"text\":\"You remember something...\",\"color\":\"gold\"}", "A flicker of memory"),
+       r_cmd(V+"/ruins", 1, "title @s title {\"text\":\"You remember something...\",\"color\":\"gold\"}", "A flicker of memory"),
        r_xp(V+"/ruins", 2, 50)],
       deps=["explore", "sapling", "breed"], shape="gear", size=2.0)
 
-# ---------- layout: serpentine ----------
+# ---------- parallel survival routes, retaining all existing quest IDs ----------
+by_key = {q["key"]: q for q in Q}
+for key, deps in {
+    "furnace": ["cobble"], "door": ["table"], "wool": ["table"],
+    "chest": ["table"], "digdeep": ["stonetools", "furnace"],
+    "hoe": ["cobble"], "bucket": ["smelt"], "shears": ["smelt"],
+    "shield": ["smelt"], "meal": ["furnace"],
+    "stockpile": ["bread", "ironpick"], "explore": ["sleep"],
+    "ruins": ["ironpick", "sleep", "bread"],
+}.items():
+    by_key[key]["deps"] = deps
+by_key["wake"]["desc"] += ["", "&6Your field journal", "Open quests from the inventory quest-book button, or bind Open Quests in Controls > FTB Quests.", "Item tasks keep your supplies. Claim rewards by clicking them. Shelter, mining and farming can be tackled in parallel."]
+by_key["cobble"]["desc"] = ["Mine 20 cobblestone with your wooden pickaxe. Enough for a furnace and your first stone tools."]
+by_key["nightfall"]["desc"] = ["Optional patrol: defeat two zombies. Stay near lit ground and keep a retreat open."]
+by_key["sapling"]["desc"] = ["Collect two saplings of one type. Plant a few near camp to keep wood close at hand."]
+by_key["ruins"]["desc"] = ["A bed. Bread. An iron pickaxe. You have enough to build a life here.", "", "The airship ran on wheels and shafts. If you can learn how they worked, the sky might not be lost to you.", "", "&6Continue in Chapter II: First Rotation.&r Optional survival jobs remain available whenever you want them."]
+
+# Read left-to-right by route; avoid a serpentine line crossing unrelated branches.
+routes = [
+    (0, ["wake", "planks", "table", "sticks", "wpick", "cobble"]),
+    (2, ["door", "wool", "bed", "sleep", "chest", "explore"]),
+    (4, ["stonetools", "furnace", "digdeep", "smelt", "ironpick", "stockpile", "ruins"]),
+    (6, ["hoe", "seeds", "farm", "bread", "breed", "sapling"]),
+    (8, ["waxe", "wsword", "light", "nightfall", "meal"]),
+    (10, ["shield", "bucket", "shears", "irontools", "armor"]),
+]
+for y, keys in routes:
+    for x, key in enumerate(keys):
+        by_key[key]["x"], by_key[key]["y"] = x * 2.25, y
+
+# ---------- layout ----------
 PER_ROW = 7
 SPACING = 1.75
 for i, q in enumerate(Q):
@@ -307,8 +347,8 @@ for i, q in enumerate(Q):
     col = i % PER_ROW
     if row % 2 == 1:
         col = PER_ROW - 1 - col
-    q["x"] = round(col * SPACING, 2)
-    q["y"] = round(row * SPACING, 2)
+    q.setdefault("x", round(col * SPACING, 2))
+    q.setdefault("y", round(row * SPACING, 2))
 
 # ---------- emit ----------
 def build_quest(q):
@@ -367,3 +407,57 @@ wr(OUT / "data.snbt", snbt({
 }) + "\n")
 wr(OUT / "chapters" / f"{V}.snbt", snbt(chapter) + "\n")
 print(f"wrote {len(Q)} quests -> {OUT}")
+
+# Chapter II teaches a working workshop rather than rewarding a shopping list.
+# New keys use their own namespace; Chapter I hashes above remain untouched.
+V = "first_rotation"
+Q = []
+spec = [
+    ("ponder", "A Mechanic's Memory", "create:andesite_alloy", None,
+     ["Find a Create item in your inventory and hold the Ponder key shown in its tooltip.", "Ponder demonstrates placement, power and moving parts. Use it whenever a machine is unfamiliar.", "This field journal is a guide, not a recipe browser: use the crafting recipe book and Ponder."], []),
+    ("alloy", "The First Alloy", "create:andesite_alloy", 8,
+     ["Gather andesite and iron nuggets to make eight andesite alloy. Keep some iron for tools."], ["ponder"]),
+    ("wheel", "Borrow the River", "create:water_wheel", 1,
+     ["Craft a water wheel. Ponder it, then set it in flowing water near your workshop."], ["alloy"]),
+    ("shaft", "Carry the Motion", "create:shaft", 8,
+     ["Shafts carry rotation in a straight line. Connect them to the wheel's axle."], ["wheel"]),
+    ("cog", "Around the Corner", "create:cogwheel", 4,
+     ["Meshing cogwheels transfer rotation. Ponder small and large cogs before changing speed."], ["shaft"]),
+    ("casing", "A Machine's Frame", "create:andesite_casing", 4,
+     ["Strip a log with an axe, then apply andesite alloy to it. Make four casings."], ["alloy"]),
+    ("press", "Under Pressure", "create:mechanical_press", 1,
+     ["Craft a mechanical press. Supply rotation from the wheel and leave room below its head."], ["cog", "casing"]),
+    ("depot", "On the Workbench", "create:depot", 1,
+     ["Put a depot beneath the press. Use Ponder to check the spacing, then place an iron ingot on it."], ["press"]),
+    ("sheet", "Proof of Power", "create:iron_sheet", 4,
+     ["Press four iron ingots into sheets. If it stalls, check connections and the wheel's stress capacity."], ["depot"]),
+    ("goggles", "Read the Machine", "create:goggles", 1,
+     ["Optional instrument: Engineer's Goggles show machine information when worn. Check the recipe book; these need gold."], ["sheet"]),
+    ("mill", "The Daily Grind", "create:millstone", 1,
+     ["Add a powered millstone. Try milling wheat and inspect the output; keep the farm feeding the workshop."], ["cog", "casing"]),
+    ("basin", "Leave Room to Grow", "create:basin", 1,
+     ["A basin holds ingredients for mixing and pressing. Set one aside for the next machine."], ["sheet"]),
+    ("mixer", "Mixing Business", "create:mechanical_mixer", 1,
+     ["Craft a mixer and Ponder it above a basin. It needs sufficient speed; a spinning shaft alone may not be enough."], ["basin", "cog"]),
+    ("workshop", "A Workshop That Works", "create:mechanical_press", None,
+     ["Practical check: one water-powered workshop, a press that makes sheets, and a millstone that processes wheat.", "Mark this complete after you have run both machines. Keep a clear walkway and room to expand."], ["sheet", "mill"]),
+    ("flight_plan", "A Reason to Build", "aeronautics:wooden_propeller", None,
+     ["Pick a place outside the village for your future hangar. Leave space around the hull and overhead.", "Your next project is flight. Use the Aeronautics Ponder scenes and the advancements tab for flight hardware milestones.", "Sketch a small first ship, decide where it will dock, and mark this planning job complete. Building it remains your next expedition."], ["workshop"]),
+]
+for i, (key, name, icon, count, desc, deps) in enumerate(spec):
+    qkey = V + "/" + key
+    tasks = [t_item(qkey, 0, icon, count)] if count else [t_check(qkey, 0, {
+        "ponder": "I watched a Create Ponder scene", "workshop": "My press and millstone run on water power",
+        "flight_plan": "I chose a hangar site and planned my first ship"}[key])]
+    quest(key, name, desc, icon, tasks, [r_xp(qkey, 0, 10 if count else 20)], deps,
+          shape="hexagon" if key in ("ponder", "workshop", "flight_plan") else None)
+    Q[-1]["x"], Q[-1]["y"] = (i % 5) * 2.5, (i // 5) * 2.5
+second = dict(chapter, filename=V, id=hid("chapter/" + V), title="II · First Rotation",
+              icon={"id": "create:water_wheel"}, order_index=1, quests=[build_quest(q) for q in Q])
+second["quests"][0]["dependencies"] = [hid("come_to/ruins")]
+wr(OUT / "chapters" / f"{V}.snbt", snbt(second) + "\n")
+for key, data in TAG_TASKS.items():
+    path = ADV / f"{key}.json"
+    path.parent.mkdir(parents=True, exist_ok=True)
+    wr(path, json.dumps(data, indent=2) + "\n")
+print(f"wrote {len(Q)} Create quests and {len(TAG_TASKS)} tag predicates")

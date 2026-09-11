@@ -1,0 +1,515 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: "circle"
+	filename: "first_rotation"
+	group: "0AE71E00A11ED000"
+	icon: {
+		id: "create:water_wheel"
+	}
+	id: "5E4D851EA3134112"
+	order_index: 1
+	quest_links: [ ]
+	quests: [
+		{
+			id: "559DA2E09D9D20A5"
+			description: [
+				"Find a Create item in your inventory and hold the Ponder key shown in its tooltip."
+				"Ponder demonstrates placement, power and moving parts. Use it whenever a machine is unfamiliar."
+				"This field journal is a guide, not a recipe browser: use the crafting recipe book and Ponder."
+			]
+			icon: {
+				id: "create:andesite_alloy"
+			}
+			shape: "hexagon"
+			tasks: [
+				{
+					id: "85254721CB4E7E01"
+					type: "checkmark"
+					title: "I watched a Create Ponder scene"
+				}
+			]
+			rewards: [
+				{
+					id: "35EE1669A3A4EC95"
+					type: "xp"
+					xp: 20
+				}
+			]
+			title: "A Mechanic's Memory"
+			x: 0.0d
+			y: 0.0d
+			dependencies: [
+				"5CB7F6551BD6013F"
+			]
+		}
+		{
+			id: "CFDE5267FF9CC24E"
+			dependencies: [
+				"559DA2E09D9D20A5"
+			]
+			description: [
+				"Gather andesite and iron nuggets to make eight andesite alloy. Keep some iron for tools."
+			]
+			icon: {
+				id: "create:andesite_alloy"
+			}
+			tasks: [
+				{
+					id: "772B5908D65C586A"
+					item: {
+						count: 1
+						id: "create:andesite_alloy"
+					}
+					type: "item"
+					consume_items: false
+					count: 8L
+				}
+			]
+			rewards: [
+				{
+					id: "2863C8BE2965CCEC"
+					type: "xp"
+					xp: 10
+				}
+			]
+			title: "The First Alloy"
+			x: 2.5d
+			y: 0.0d
+		}
+		{
+			id: "B6044BDF3509549D"
+			dependencies: [
+				"CFDE5267FF9CC24E"
+			]
+			description: [
+				"Craft a water wheel. Ponder it, then set it in flowing water near your workshop."
+			]
+			icon: {
+				id: "create:water_wheel"
+			}
+			tasks: [
+				{
+					id: "B9B78C4EA7224E61"
+					item: {
+						count: 1
+						id: "create:water_wheel"
+					}
+					type: "item"
+					consume_items: false
+				}
+			]
+			rewards: [
+				{
+					id: "5B04AB52F2D7E7AE"
+					type: "xp"
+					xp: 10
+				}
+			]
+			title: "Borrow the River"
+			x: 5.0d
+			y: 0.0d
+		}
+		{
+			id: "2E5E6564F2DF0874"
+			dependencies: [
+				"B6044BDF3509549D"
+			]
+			description: [
+				"Shafts carry rotation in a straight line. Connect them to the wheel's axle."
+			]
+			icon: {
+				id: "create:shaft"
+			}
+			tasks: [
+				{
+					id: "57F6505835336777"
+					item: {
+						count: 1
+						id: "create:shaft"
+					}
+					type: "item"
+					consume_items: false
+					count: 8L
+				}
+			]
+			rewards: [
+				{
+					id: "9103B853174F9EA7"
+					type: "xp"
+					xp: 10
+				}
+			]
+			title: "Carry the Motion"
+			x: 7.5d
+			y: 0.0d
+		}
+		{
+			id: "C45A64B754E65EB3"
+			dependencies: [
+				"2E5E6564F2DF0874"
+			]
+			description: [
+				"Meshing cogwheels transfer rotation. Ponder small and large cogs before changing speed."
+			]
+			icon: {
+				id: "create:cogwheel"
+			}
+			tasks: [
+				{
+					id: "3235BF96C5BB5984"
+					item: {
+						count: 1
+						id: "create:cogwheel"
+					}
+					type: "item"
+					consume_items: false
+					count: 4L
+				}
+			]
+			rewards: [
+				{
+					id: "917691D98D470F7C"
+					type: "xp"
+					xp: 10
+				}
+			]
+			title: "Around the Corner"
+			x: 10.0d
+			y: 0.0d
+		}
+		{
+			id: "13F8DD832348D1E2"
+			dependencies: [
+				"CFDE5267FF9CC24E"
+			]
+			description: [
+				"Strip a log with an axe, then apply andesite alloy to it. Make four casings."
+			]
+			icon: {
+				id: "create:andesite_casing"
+			}
+			tasks: [
+				{
+					id: "05C33451975AE0A8"
+					item: {
+						count: 1
+						id: "create:andesite_casing"
+					}
+					type: "item"
+					consume_items: false
+					count: 4L
+				}
+			]
+			rewards: [
+				{
+					id: "E33F1A05D6B3276F"
+					type: "xp"
+					xp: 10
+				}
+			]
+			title: "A Machine's Frame"
+			x: 0.0d
+			y: 2.5d
+		}
+		{
+			id: "F6D6D41DE71DE6D7"
+			dependencies: [
+				"C45A64B754E65EB3"
+				"13F8DD832348D1E2"
+			]
+			description: [
+				"Craft a mechanical press. Supply rotation from the wheel and leave room below its head."
+			]
+			icon: {
+				id: "create:mechanical_press"
+			}
+			tasks: [
+				{
+					id: "E46DC8A8D9D5E47C"
+					item: {
+						count: 1
+						id: "create:mechanical_press"
+					}
+					type: "item"
+					consume_items: false
+				}
+			]
+			rewards: [
+				{
+					id: "CF0FFCAF36337A6A"
+					type: "xp"
+					xp: 10
+				}
+			]
+			title: "Under Pressure"
+			x: 2.5d
+			y: 2.5d
+		}
+		{
+			id: "AECC816712F94E50"
+			dependencies: [
+				"F6D6D41DE71DE6D7"
+			]
+			description: [
+				"Put a depot beneath the press. Use Ponder to check the spacing, then place an iron ingot on it."
+			]
+			icon: {
+				id: "create:depot"
+			}
+			tasks: [
+				{
+					id: "EFE6C97EB3F70370"
+					item: {
+						count: 1
+						id: "create:depot"
+					}
+					type: "item"
+					consume_items: false
+				}
+			]
+			rewards: [
+				{
+					id: "92DD6B6A52AF4820"
+					type: "xp"
+					xp: 10
+				}
+			]
+			title: "On the Workbench"
+			x: 5.0d
+			y: 2.5d
+		}
+		{
+			id: "3C694CD356A5B140"
+			dependencies: [
+				"AECC816712F94E50"
+			]
+			description: [
+				"Press four iron ingots into sheets. If it stalls, check connections and the wheel's stress capacity."
+			]
+			icon: {
+				id: "create:iron_sheet"
+			}
+			tasks: [
+				{
+					id: "2FD9001AAD61DA4E"
+					item: {
+						count: 1
+						id: "create:iron_sheet"
+					}
+					type: "item"
+					consume_items: false
+					count: 4L
+				}
+			]
+			rewards: [
+				{
+					id: "692424B852CEDFAE"
+					type: "xp"
+					xp: 10
+				}
+			]
+			title: "Proof of Power"
+			x: 7.5d
+			y: 2.5d
+		}
+		{
+			id: "3EFFF00F751DA0C3"
+			dependencies: [
+				"3C694CD356A5B140"
+			]
+			description: [
+				"Optional instrument: Engineer's Goggles show machine information when worn. Check the recipe book; these need gold."
+			]
+			icon: {
+				id: "create:goggles"
+			}
+			tasks: [
+				{
+					id: "224D91B63BC83440"
+					item: {
+						count: 1
+						id: "create:goggles"
+					}
+					type: "item"
+					consume_items: false
+				}
+			]
+			rewards: [
+				{
+					id: "8C22F4E9251FC588"
+					type: "xp"
+					xp: 10
+				}
+			]
+			title: "Read the Machine"
+			x: 10.0d
+			y: 2.5d
+		}
+		{
+			id: "3B649F945572DB39"
+			dependencies: [
+				"C45A64B754E65EB3"
+				"13F8DD832348D1E2"
+			]
+			description: [
+				"Add a powered millstone. Try milling wheat and inspect the output; keep the farm feeding the workshop."
+			]
+			icon: {
+				id: "create:millstone"
+			}
+			tasks: [
+				{
+					id: "9CC549C10C4A5C83"
+					item: {
+						count: 1
+						id: "create:millstone"
+					}
+					type: "item"
+					consume_items: false
+				}
+			]
+			rewards: [
+				{
+					id: "5575DAC6EDD819EE"
+					type: "xp"
+					xp: 10
+				}
+			]
+			title: "The Daily Grind"
+			x: 0.0d
+			y: 5.0d
+		}
+		{
+			id: "8B7CBAA7B6DB8128"
+			dependencies: [
+				"3C694CD356A5B140"
+			]
+			description: [
+				"A basin holds ingredients for mixing and pressing. Set one aside for the next machine."
+			]
+			icon: {
+				id: "create:basin"
+			}
+			tasks: [
+				{
+					id: "A66E48D051DFD7DC"
+					item: {
+						count: 1
+						id: "create:basin"
+					}
+					type: "item"
+					consume_items: false
+				}
+			]
+			rewards: [
+				{
+					id: "CFC5BE16676A78E0"
+					type: "xp"
+					xp: 10
+				}
+			]
+			title: "Leave Room to Grow"
+			x: 2.5d
+			y: 5.0d
+		}
+		{
+			id: "5F08E27500AC11C5"
+			dependencies: [
+				"8B7CBAA7B6DB8128"
+				"C45A64B754E65EB3"
+			]
+			description: [
+				"Craft a mixer and Ponder it above a basin. It needs sufficient speed; a spinning shaft alone may not be enough."
+			]
+			icon: {
+				id: "create:mechanical_mixer"
+			}
+			tasks: [
+				{
+					id: "28607D0C3D935EA6"
+					item: {
+						count: 1
+						id: "create:mechanical_mixer"
+					}
+					type: "item"
+					consume_items: false
+				}
+			]
+			rewards: [
+				{
+					id: "86424EAA25847580"
+					type: "xp"
+					xp: 10
+				}
+			]
+			title: "Mixing Business"
+			x: 5.0d
+			y: 5.0d
+		}
+		{
+			id: "83043E313CF64BB2"
+			dependencies: [
+				"3C694CD356A5B140"
+				"3B649F945572DB39"
+			]
+			description: [
+				"Practical check: one water-powered workshop, a press that makes sheets, and a millstone that processes wheat."
+				"Mark this complete after you have run both machines. Keep a clear walkway and room to expand."
+			]
+			icon: {
+				id: "create:mechanical_press"
+			}
+			shape: "hexagon"
+			tasks: [
+				{
+					id: "5D6A8F4D6479BE42"
+					type: "checkmark"
+					title: "My press and millstone run on water power"
+				}
+			]
+			rewards: [
+				{
+					id: "2E82775754EADA07"
+					type: "xp"
+					xp: 20
+				}
+			]
+			title: "A Workshop That Works"
+			x: 7.5d
+			y: 5.0d
+		}
+		{
+			id: "91F898E2000360BD"
+			dependencies: [
+				"83043E313CF64BB2"
+			]
+			description: [
+				"Pick a place outside the village for your future hangar. Leave space around the hull and overhead."
+				"Your next project is flight. Use the Aeronautics Ponder scenes and the advancements tab for flight hardware milestones."
+				"Sketch a small first ship, decide where it will dock, and mark this planning job complete. Building it remains your next expedition."
+			]
+			icon: {
+				id: "aeronautics:wooden_propeller"
+			}
+			shape: "hexagon"
+			tasks: [
+				{
+					id: "ECF2E67601862462"
+					type: "checkmark"
+					title: "I chose a hangar site and planned my first ship"
+				}
+			]
+			rewards: [
+				{
+					id: "6F26876CF454D44F"
+					type: "xp"
+					xp: 20
+				}
+			]
+			title: "A Reason to Build"
+			x: 10.0d
+			y: 5.0d
+		}
+	]
+	title: "II · First Rotation"
+}

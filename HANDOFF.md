@@ -1,5 +1,10 @@
 # Outlands of Aerie — Server Handoff / Context Dump
 
+> **2026-09-11 update:** Intro and quests were revised after this snapshot.
+> Read [server/CONTENT_UPDATE.md](server/CONTENT_UPDATE.md) first for current
+> timings, coordinates, quest changes, resource-pack delivery and deployment.
+> The historical cutscene implementation below has been replaced.
+
 A Minecraft Java survival server for ~5 friends, self-hosted on a Raspberry Pi 5,
 built around Create + Create: Aeronautics. This doc is a complete state snapshot
 for another assistant to pick up work — especially the broken arrival cutscene.
