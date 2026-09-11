@@ -76,11 +76,6 @@ hash = "48b746cb623c16a8cee88ec0d7d42233d74d97b9cf92d662f121633723d50876"
 metafile = true
 
 [[files]]
-file = "mods/knight-lib.pw.toml"
-hash = "29aa0788a41adc7cb517a6908c73c2d62179e61ed6194ebb755aaed8628452db"
-metafile = true
-
-[[files]]
 file = "mods/lithium.pw.toml"
 hash = "51e129832b04acd57da470fc41725bad5e101b6a6b1d4901fd8ea7a92b14e13d"
 metafile = true
