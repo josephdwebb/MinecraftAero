@@ -1,0 +1,17 @@
+{
+  "criteria": {
+    "have": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": "#minecraft:planks",
+            "count": {
+              "min": 4
+            }
+          }
+        ]
+      }
+    }
+  }
+}

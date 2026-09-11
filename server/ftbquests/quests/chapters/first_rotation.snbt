@@ -180,7 +180,7 @@
 		{
 			id: "13F8DD832348D1E2"
 			dependencies: [
-				"CFDE5267FF9CC24E"
+				"C45A64B754E65EB3"
 			]
 			description: [
 				"Strip a log with an axe, then apply andesite alloy to it. Make four casings."
@@ -214,7 +214,6 @@
 		{
 			id: "F6D6D41DE71DE6D7"
 			dependencies: [
-				"C45A64B754E65EB3"
 				"13F8DD832348D1E2"
 			]
 			description: [
@@ -348,8 +347,7 @@
 		{
 			id: "3B649F945572DB39"
 			dependencies: [
-				"C45A64B754E65EB3"
-				"13F8DD832348D1E2"
+				"3EFFF00F751DA0C3"
 			]
 			description: [
 				"Add a powered millstone. Try milling wheat and inspect the output; keep the farm feeding the workshop."
@@ -382,7 +380,7 @@
 		{
 			id: "8B7CBAA7B6DB8128"
 			dependencies: [
-				"3C694CD356A5B140"
+				"3B649F945572DB39"
 			]
 			description: [
 				"A basin holds ingredients for mixing and pressing. Set one aside for the next machine."
@@ -416,7 +414,6 @@
 			id: "5F08E27500AC11C5"
 			dependencies: [
 				"8B7CBAA7B6DB8128"
-				"C45A64B754E65EB3"
 			]
 			description: [
 				"Craft a mixer and Ponder it above a basin. It needs sufficient speed; a spinning shaft alone may not be enough."
@@ -449,8 +446,7 @@
 		{
 			id: "83043E313CF64BB2"
 			dependencies: [
-				"3C694CD356A5B140"
-				"3B649F945572DB39"
+				"5F08E27500AC11C5"
 			]
 			description: [
 				"Practical check: one water-powered workshop, a press that makes sheets, and a millstone that processes wheat."

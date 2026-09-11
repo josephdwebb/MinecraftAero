@@ -1,0 +1,17 @@
+{
+  "criteria": {
+    "have": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": "#minecraft:saplings",
+            "count": {
+              "min": 2
+            }
+          }
+        ]
+      }
+    }
+  }
+}

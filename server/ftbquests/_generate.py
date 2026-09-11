@@ -369,6 +369,16 @@ def build_quest(q):
     d["y"] = D(q["y"])
     return d
 
+def linearize(quests):
+    """Force a strictly linear chain: quest N depends only on quest N-1.
+
+    The tracker should ever show one objective, so the dependency graph must be
+    a single path. Authoring order above defines the path.
+    """
+    for i, q in enumerate(quests):
+        q["deps"] = [quests[i - 1]["key"]] if i else []
+
+
 chapter = {
     "default_hide_dependency_lines": False,
     "default_quest_shape": "circle",
@@ -378,7 +388,7 @@ chapter = {
     "id": hid("chapter/" + V),
     "order_index": 0,
     "quest_links": [],
-    "quests": [build_quest(q) for q in Q],
+    "quests": (linearize(Q), [build_quest(q) for q in Q])[1],
     "title": "I · Come To",
 }
 
@@ -452,6 +462,7 @@ for i, (key, name, icon, count, desc, deps) in enumerate(spec):
     quest(key, name, desc, icon, tasks, [r_xp(qkey, 0, 10 if count else 20)], deps,
           shape="hexagon" if key in ("ponder", "workshop", "flight_plan") else None)
     Q[-1]["x"], Q[-1]["y"] = (i % 5) * 2.5, (i // 5) * 2.5
+linearize(Q)
 second = dict(chapter, filename=V, id=hid("chapter/" + V), title="II · First Rotation",
               icon={"id": "create:water_wheel"}, order_index=1, quests=[build_quest(q) for q in Q])
 second["quests"][0]["dependencies"] = [hid("come_to/ruins")]

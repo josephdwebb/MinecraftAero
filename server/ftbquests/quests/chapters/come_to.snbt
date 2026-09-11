@@ -200,7 +200,7 @@
 		{
 			id: "43EF441AED629293"
 			dependencies: [
-				"9A384F9BF5F4D234"
+				"E4BC988BAD6A9957"
 			]
 			description: [
 				"Chops wood faster than your fists. Your knuckles will thank you."
@@ -233,7 +233,7 @@
 		{
 			id: "24E6F92EC4765AA4"
 			dependencies: [
-				"9A384F9BF5F4D234"
+				"43EF441AED629293"
 			]
 			description: [
 				"Something moved in the trees. Arm yourself."
@@ -266,7 +266,7 @@
 		{
 			id: "CAD8B98ECAA45A5D"
 			dependencies: [
-				"E4BC988BAD6A9957"
+				"24E6F92EC4765AA4"
 			]
 			description: [
 				"Mine 20 cobblestone with your wooden pickaxe. Enough for a furnace and your first stone tools."
@@ -352,7 +352,7 @@
 		{
 			id: "D56229968D5E620B"
 			dependencies: [
-				"CAD8B98ECAA45A5D"
+				"A1102DAD27E27158"
 			]
 			description: [
 				"Eight cobblestone. A furnace smelts ore, cooks food, and bakes charcoal."
@@ -431,7 +431,7 @@
 		{
 			id: "D87B3B854D108D5B"
 			dependencies: [
-				"2BD46C240B1CF81D"
+				"9049EB5E011201C0"
 			]
 			description: [
 				"Six planks. A door keeps the night where it belongs."
@@ -502,7 +502,7 @@
 		{
 			id: "E512DD6D39C13534"
 			dependencies: [
-				"2BD46C240B1CF81D"
+				"FAA0795721B9683C"
 			]
 			description: [
 				"Find sheep. Shear them or cut them down — you need wool for a bed."
@@ -606,7 +606,7 @@
 		{
 			id: "F2E6E167B15F2D7E"
 			dependencies: [
-				"2BD46C240B1CF81D"
+				"2FD6D8A0CB56E4FC"
 			]
 			description: [
 				"Eight planks. Stop carrying your whole life in your pockets."
@@ -643,8 +643,7 @@
 		{
 			id: "AB5D36F83A346A11"
 			dependencies: [
-				"A1102DAD27E27158"
-				"D56229968D5E620B"
+				"F2E6E167B15F2D7E"
 			]
 			description: [
 				"Iron hides as pale specks in stone, lower down. A stone pickaxe will break it."
@@ -887,7 +886,7 @@
 		{
 			id: "E0DB36F6EEC29F3E"
 			dependencies: [
-				"54812E037F16C06B"
+				"D81D64C6E762931B"
 			]
 			description: [
 				"Six planks, one iron. Raise it and most things bounce off."
@@ -920,7 +919,7 @@
 		{
 			id: "A53A3470638FB55F"
 			dependencies: [
-				"54812E037F16C06B"
+				"E0DB36F6EEC29F3E"
 			]
 			description: [
 				"Three iron. Carries water, lava, milk, fish. You'll want water soon — trust me."
@@ -957,7 +956,7 @@
 		{
 			id: "EE1AFDEA69A26B1B"
 			dependencies: [
-				"54812E037F16C06B"
+				"A53A3470638FB55F"
 			]
 			description: [
 				"Two iron. Wool without the wet work, plus leaves and string."
@@ -994,7 +993,7 @@
 		{
 			id: "2392FC4E3814ECF2"
 			dependencies: [
-				"CAD8B98ECAA45A5D"
+				"EE1AFDEA69A26B1B"
 			]
 			description: [
 				"A hoe turns dirt into farmland. Any hoe will do."
@@ -1192,7 +1191,7 @@
 		{
 			id: "F58435779520CC3C"
 			dependencies: [
-				"D56229968D5E620B"
+				"9ED177CAF5B33BD1"
 			]
 			description: [
 				"Cook and stockpile real food. Rotten flesh doesn't count."
@@ -1226,7 +1225,7 @@
 		{
 			id: "E5C85FD2AF1BE518"
 			dependencies: [
-				"FA11008CCC82FA36"
+				"F58435779520CC3C"
 			]
 			description: [
 				"Collect two saplings of one type. Plant a few near camp to keep wood close at hand."
@@ -1257,8 +1256,7 @@
 		{
 			id: "A3D540A2F7810957"
 			dependencies: [
-				"8E57ECA4D3179316"
-				"F8A704B3F2C4D08F"
+				"E5C85FD2AF1BE518"
 			]
 			description: [
 				"You don't leave a safe camp without supplies. Stock up."
@@ -1322,7 +1320,7 @@
 		{
 			id: "96339D80CCC42F60"
 			dependencies: [
-				"2FD6D8A0CB56E4FC"
+				"A3D540A2F7810957"
 			]
 			description: [
 				"Climb something high. Look out over the frontier. Get a feel for where you woke up."
@@ -1361,9 +1359,7 @@
 		{
 			id: "5CB7F6551BD6013F"
 			dependencies: [
-				"F8A704B3F2C4D08F"
-				"2FD6D8A0CB56E4FC"
-				"8E57ECA4D3179316"
+				"96339D80CCC42F60"
 			]
 			description: [
 				"A bed. Bread. An iron pickaxe. You have enough to build a life here."
