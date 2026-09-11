@@ -1,0 +1,6 @@
+{
+  "theme": {
+    "sounds": [{"name": "aerie:theme", "stream": true, "attenuation_distance": 512}],
+    "subtitle": "Outlands of Aerie"
+  }
+}

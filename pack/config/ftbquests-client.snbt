@@ -30,10 +30,10 @@
 	pinned: {
 		# Default: "chapter"
 		# Valid values: "file", "chapter"
-		auto_pin_follows: "chapter"
+		auto_pin_follows: "file"
 		
 		# Default: true
-		pinned_exclude_flexible: true
+		pinned_exclude_flexible: false
 		
 		# Default: 2
 		# Range: -∞ ~ +∞
