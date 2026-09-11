@@ -27,9 +27,7 @@ for you automatically. You never download or manage mods yourself.
 **4. Join**
    **Multiplayer → Outlands of Aerie** is already in your server list. Join it.
 
-**5. Get whitelisted**
-   Tell Joe your exact Minecraft username. The server is whitelist-only, so
-   you'll see "You are not white-listed on this server!" until he adds you.
+That's it — no whitelist, just join.
 
 ---
 
