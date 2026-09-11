@@ -389,7 +389,7 @@ OUT.mkdir(parents=True, exist_ok=True)
 (OUT / "chapters").mkdir(exist_ok=True)
 wr(OUT / "chapter_groups.snbt", snbt({"chapter_groups": [{"id": GROUP_ID, "title": "Outlands of Aerie"}]}) + "\n")
 wr(OUT / "data.snbt", snbt({
-    "default_autoclaim_rewards": "disabled",
+    "default_autoclaim_rewards": "enabled",
     "default_consume_items": False,
     "default_quest_disable_jei": False,
     "default_quest_shape": "circle",
@@ -401,7 +401,7 @@ wr(OUT / "data.snbt", snbt({
     "grid_scale": D(0.5),
     "lock_message": "",
     "pause_game": False,
-    "progression_mode": "flexible",
+    "progression_mode": "linear",
     "title": "Outlands of Aerie",
     "version": 13,
 }) + "\n")
