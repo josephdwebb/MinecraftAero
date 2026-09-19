@@ -6,6 +6,10 @@
 
 modrinth create
 modrinth create-aeronautics
+modrinth create-deco
+modrinth copycats
+modrinth farmers-delight
+modrinth create-big-cannons
 
 # Server-side performance/memory + spawn pre-generation
 modrinth lithium
