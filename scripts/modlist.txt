@@ -10,6 +10,7 @@ modrinth create-deco
 modrinth copycats
 modrinth farmers-delight
 modrinth create-big-cannons
+modrinth rpl
 
 # Server-side performance/memory + spawn pre-generation
 modrinth lithium
