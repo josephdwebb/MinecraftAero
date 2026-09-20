@@ -1,0 +1,33 @@
+{
+  "costs": {
+    "tpa": 10,
+    "tpahere": 10,
+    "tpaccept": 10,
+    "home": 10,
+    "warp": 10,
+    "spawn": 10,
+    "rtp": 10,
+    "wild": 10,
+    "back": 10,
+    "xaero_tp": 0
+  },
+  "messages": {
+    "insufficient_xp": "§cYou do not have enough XP levels to teleport! (Cost: %s levels, Current: %s levels)",
+    "xp_deducted": "§aTeleportation successful!",
+    "confirm_prompt": "§eTeleport to [%s, %s, %s]?"
+  },
+  "redirect_tp_to_xtp": true,
+  "max_homes": 5,
+  "rtp_min_range": 50,
+  "rtp_max_range": 500,
+  "distance_based_xp": false,
+  "use_logarithmic_cost": false,
+  "base_teleport_cost": 0.0,
+  "log_multiplier": 0.0,
+  "xaero_multiplier": 0.0,
+  "blocks_per_level": 500,
+  "cross_dimension_cost": 0,
+  "warmup_seconds": 0,
+  "cooldown_seconds": 0,
+  "show_ops_on_leaderboard": false
+}

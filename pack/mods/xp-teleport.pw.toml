@@ -1,0 +1,13 @@
+name = "XP Teleport"
+filename = "xpteleport-1.2.1.jar"
+side = "server"
+
+[download]
+url = "https://cdn.modrinth.com/data/mUl318mZ/versions/DRMwpq9o/xpteleport-1.2.1.jar"
+hash-format = "sha512"
+hash = "504a53b2681ff046b896194ff128e7c08cd9e771cb834de2016701d0f31de828c268be7b078c19e790eb36b195c25edb051a2ccb3a840c6380ccb80c1af4ce2c"
+
+[update]
+[update.modrinth]
+mod-id = "mUl318mZ"
+version = "DRMwpq9o"

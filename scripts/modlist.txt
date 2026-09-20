@@ -18,6 +18,10 @@ modrinth ferrite-core
 modrinth modernfix
 modrinth chunky            server
 
+# Allow non-op players to use Xaero waypoint/map coordinate teleportation.
+# Server-side only; configured for free, immediate self-teleports.
+modrinth xp-teleport       server
+
 # Client performance (big wins on weak laptops)
 modrinth sodium            client
 modrinth immediatelyfast   client

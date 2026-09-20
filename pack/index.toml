@@ -5,6 +5,10 @@ file = "config/ftbquests-client.snbt"
 hash = "5cf510985e237b0fce957abc0b8a86b039442b03d22f504772f24e327ea8e4fb"
 
 [[files]]
+file = "config/xpteleport.json"
+hash = "761c2b52b25b3efc980a2ba49f7026fb7f560c118341bc9daa511819933c0c96"
+
+[[files]]
 file = "mods/ambientsounds.pw.toml"
 hash = "f3d66527c4f82b44d9409f643332bc15f91b85f033afe147e3d8b421c0ea6d1e"
 metafile = true
@@ -142,6 +146,11 @@ metafile = true
 [[files]]
 file = "mods/xaeros-world-map.pw.toml"
 hash = "f139ff8d596a050f140c50a54866bbbd454833e4014227986a716c39a7dbe535"
+metafile = true
+
+[[files]]
+file = "mods/xp-teleport.pw.toml"
+hash = "4d5d2f791c36d81a1a7edd5320809d7fcd83a704225548a78697ae9b481e88d4"
 metafile = true
 
 [[files]]
